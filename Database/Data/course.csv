@@ -1,0 +1,351 @@
+cou_ID,cou_Name,cou_Description,cou_IsActive,cou_Rating,cou_DurationHours,cou_MaxDegree,cou_MinDegree
+1,Introduction to HTML,Learn HTML basics including tags elements and semantic structure for modern web development,true,4.2,8,50,30
+2,CSS Fundamentals,Master CSS styling selectors layout techniques and responsive design principles,true,4.5,12,50,30
+3,JavaScript Basics,Core JavaScript programming concepts variables functions and DOM manipulation techniques,true,4.7,25,100,60
+4,React Development,Build modern interactive web applications using React hooks and component architecture,true,4.6,40,150,90
+5,Vue.js Essentials,Create dynamic user interfaces with Vue.js framework and state management,true,4.3,35,150,90
+6,Angular Framework,Comprehensive Angular development including TypeScript components and services,true,4.4,45,200,120
+7,Node.js Backend,Server-side JavaScript development with Node.js Express and REST APIs,true,4.5,38,150,90
+8,Python Programming,Learn Python syntax data structures algorithms and object-oriented programming concepts,true,4.8,30,100,60
+9,Django Web Framework,Build scalable web applications using Django MVT architecture and ORM,true,4.4,42,200,120
+10,Flask Microframework,Lightweight Python web development with Flask routing and templating,true,4.3,28,100,60
+11,Database Design,Relational database concepts normalization ER diagrams and SQL fundamentals,true,4.6,22,100,60
+12,MySQL Mastery,Advanced MySQL queries optimization indexing and database administration techniques,true,4.5,32,150,90
+13,PostgreSQL Development,Learn PostgreSQL advanced features JSON support and performance tuning strategies,true,4.4,35,150,90
+14,MongoDB Basics,NoSQL database development with MongoDB CRUD operations and aggregation pipelines,true,4.6,26,100,60
+15,Redis Caching,In-memory data store implementation for caching and real-time applications,true,4.2,15,50,30
+16,Git Version Control,Master Git commands branching merging and collaborative workflow strategies,true,4.7,18,50,30
+17,Docker Containers,Containerization concepts Docker images containers and orchestration basics,true,4.8,30,150,90
+18,Kubernetes Orchestration,Container orchestration deployment scaling and management with Kubernetes platform,true,4.5,48,200,120
+19,AWS Cloud Fundamentals,Amazon Web Services core services EC2 S3 and cloud architecture,true,4.6,40,200,120
+20,Azure Cloud Platform,Microsoft Azure services virtual machines storage and cloud solutions,true,4.4,42,200,120
+21,Google Cloud Platform,GCP services compute engine cloud storage and application deployment,true,4.3,38,200,120
+22,DevOps Practices,CI/CD pipelines automation infrastructure as code and deployment strategies,true,4.7,45,200,120
+23,Linux Administration,Linux command line system administration shell scripting and server management,true,4.5,35,150,90
+24,Cybersecurity Basics,Information security principles threat analysis encryption and security best practices,true,4.6,28,100,60
+25,Ethical Hacking,Penetration testing vulnerability assessment and security auditing techniques,true,4.4,50,220,132
+26,Network Security,Network protocols firewalls VPNs and intrusion detection systems,true,4.5,40,200,120
+27,Machine Learning Intro,Introduction to ML algorithms supervised learning and model training,true,4.8,45,200,120
+28,Deep Learning Neural Networks,Neural network architectures backpropagation and deep learning frameworks,true,4.7,55,250,150
+29,Data Science Python,Data analysis visualization and statistical computing with Python libraries,true,4.6,48,200,120
+30,R Programming Statistics,Statistical analysis data visualization and R programming for data science,true,4.3,32,150,90
+31,Data Visualization Tableau,Create interactive dashboards and visual analytics using Tableau software,true,4.5,24,100,60
+32,Power BI Analytics,Business intelligence reporting and data visualization with Microsoft Power BI,true,4.4,26,100,60
+33,Big Data Hadoop,Distributed computing MapReduce and Hadoop ecosystem for large datasets,true,4.3,50,220,132
+34,Apache Spark,Fast distributed data processing analytics and machine learning with Spark,true,4.6,45,200,120
+35,Natural Language Processing,Text processing sentiment analysis and NLP techniques using Python,true,4.5,42,200,120
+36,Computer Vision,Image processing object detection and computer vision algorithms,true,4.7,48,220,132
+37,TensorFlow Framework,Deep learning model development training and deployment with TensorFlow,true,4.6,50,220,132
+38,PyTorch Deep Learning,Neural network development and research with PyTorch framework,true,4.7,48,220,132
+39,SQL Advanced Queries,Complex SQL queries subqueries window functions and optimization,true,4.5,28,150,90
+40,Data Warehousing,ETL processes dimensional modeling and data warehouse architecture,true,4.4,38,200,120
+41,API Development REST,RESTful API design implementation authentication and documentation practices,true,4.6,30,150,90
+42,GraphQL APIs,GraphQL schema design queries mutations and modern API development,true,4.5,25,100,60
+43,Microservices Architecture,Design implement and deploy microservices-based distributed systems,true,4.7,45,200,120
+44,Software Testing QA,Testing methodologies unit testing integration testing and quality assurance,true,4.4,32,150,90
+45,Test Automation Selenium,Automated browser testing with Selenium WebDriver and test frameworks,true,4.5,35,150,90
+46,Agile Scrum Methodology,Agile principles Scrum framework sprint planning and team collaboration,true,4.3,12,50,30
+47,Mobile App Development,Cross-platform mobile development UI/UX design and app deployment,true,4.6,50,220,132
+48,iOS Swift Programming,Native iOS app development with Swift UIKit and SwiftUI,true,4.7,48,200,120
+49,Android Kotlin Development,Android app creation using Kotlin Jetpack Compose and Android SDK,true,4.6,50,220,132
+50,React Native Apps,Build cross-platform mobile applications using React Native framework,true,4.5,42,200,120
+51,Flutter Development,Create beautiful native apps with Flutter Dart and Material Design,true,4.7,45,200,120
+52,UI UX Design,User interface design user experience principles wireframing and prototyping,true,4.6,28,100,60
+53,Figma Design Tool,Interface design prototyping and collaboration using Figma platform,true,4.5,18,50,30
+54,Adobe XD Prototyping,Design interactive prototypes and user interfaces with Adobe XD,true,4.4,16,50,30
+55,Responsive Web Design,Mobile-first design fluid grids media queries and flexible layouts,true,4.6,20,100,60
+56,Bootstrap Framework,Rapid web development using Bootstrap grid system and components,true,4.3,15,50,30
+57,Tailwind CSS,Utility-first CSS framework for rapid custom interface development,true,4.7,18,50,30
+58,TypeScript Programming,Type-safe JavaScript development with TypeScript features and best practices,true,4.6,25,100,60
+59,Web Accessibility WCAG,Accessible web development ARIA standards and inclusive design principles,true,4.4,20,100,60
+60,SEO Optimization,Search engine optimization techniques keyword research and content strategy,true,4.3,16,50,30
+61,Web Performance,Website speed optimization lazy loading caching and performance metrics,true,4.5,22,100,60
+62,Progressive Web Apps,Build PWAs with service workers offline functionality and app-like features,true,4.6,32,150,90
+63,WebAssembly Basics,High-performance web applications using WebAssembly and compiled languages,true,4.2,28,150,90
+64,Chrome DevTools,Browser debugging performance profiling and web development tools,true,4.4,10,30,18
+65,Webpack Module Bundler,Asset bundling code splitting and modern JavaScript build tools,true,4.3,20,100,60
+66,Bash Shell Scripting,Shell programming automation and command-line tools development,true,4.4,18,50,30
+67,PowerShell Scripting,Windows automation system administration and PowerShell scripting,true,4.2,22,100,60
+68,Regular Expressions,Pattern matching text processing and regex syntax across languages,true,4.5,12,50,30
+69,Algorithms Data Structures,Fundamental algorithms complexity analysis and data structure implementation,true,4.8,45,200,120
+70,System Design,Scalable system architecture distributed systems and design patterns,true,4.7,40,200,120
+71,Object-Oriented Programming,OOP principles inheritance polymorphism encapsulation and design patterns,true,4.6,30,150,90
+72,Functional Programming,Functional paradigm pure functions immutability and lambda expressions,true,4.5,28,150,90
+73,Code Reviews Best Practices,Effective code review techniques feedback and team collaboration,true,4.3,8,30,18
+74,Clean Code Principles,Writing maintainable readable code following SOLID principles and best practices,true,4.6,16,50,30
+75,Design Patterns,Software design patterns creational structural and behavioral patterns,true,4.7,35,150,90
+76,Refactoring Techniques,Code improvement strategies technical debt management and refactoring patterns,true,4.5,20,100,60
+77,Debugging Strategies,Systematic debugging approaches tools and troubleshooting methodologies,true,4.4,14,50,30
+78,Software Architecture,Architectural patterns microservices monoliths and system organization,true,4.6,38,200,120
+79,Java Programming,Core Java object-oriented concepts collections and multithreading,true,4.5,40,200,120
+80,Spring Boot Framework,Enterprise Java development with Spring Boot REST APIs and dependency injection,true,4.6,45,200,120
+81,C++ Programming,Modern C++ features STL memory management and object-oriented design,true,4.4,42,200,120
+82,C# .NET Development,C# programming .NET framework and Windows application development,true,4.5,40,200,120
+83,Ruby on Rails,Full-stack web development with Ruby on Rails MVC and ActiveRecord,true,4.3,38,150,90
+84,PHP Laravel Framework,Modern PHP development with Laravel Eloquent ORM and Blade templates,true,4.4,36,150,90
+85,Go Programming,Concurrent programming with Go goroutines channels and system development,true,4.6,32,150,90
+86,Rust Programming,Systems programming with Rust memory safety ownership and concurrency,true,4.7,40,200,120
+87,Swift Programming,Swift language fundamentals protocols generics and iOS development,true,4.5,35,150,90
+88,Kotlin Programming,Modern JVM language Android development and functional programming features,true,4.6,30,150,90
+89,Scala Programming,Functional and object-oriented programming with Scala for JVM,true,4.3,35,150,90
+90,Elixir Functional Language,Functional concurrent programming with Elixir and Phoenix framework,true,4.4,32,150,90
+91,Blockchain Basics,Distributed ledger technology cryptocurrency and blockchain fundamentals,true,4.5,28,150,90
+92,Smart Contracts Solidity,Ethereum smart contract development with Solidity and Web3,true,4.4,35,200,120
+93,Cryptocurrency Development,Build blockchain applications tokens and decentralized systems,true,4.3,40,200,120
+94,IoT Internet of Things,Connected devices sensors IoT protocols and embedded systems,true,4.5,32,150,90
+95,Arduino Programming,Microcontroller programming sensors actuators and hardware projects,true,4.6,24,100,60
+96,Raspberry Pi Projects,Single-board computing GPIO programming and DIY electronics projects,true,4.5,20,100,60
+97,Embedded Systems C,Low-level programming real-time systems and embedded software development,true,4.4,38,200,120
+98,Game Development Unity,Create 2D and 3D games using Unity engine and C# scripting,true,4.7,50,220,132
+99,Unreal Engine Development,Game creation with Unreal Engine Blueprints and C++ programming,true,4.6,55,250,150
+100,Game Design Principles,Game mechanics level design player experience and game theory,true,4.5,26,100,60
+101,Computer Graphics OpenGL,3D graphics rendering shaders and OpenGL programming,true,4.4,42,200,120
+102,Virtual Reality Development,VR application development immersive experiences and spatial computing,true,4.6,45,220,132
+103,Augmented Reality AR,AR development image tracking spatial mapping and mixed reality,true,4.5,38,200,120
+104,Computer Networks,Network protocols TCP/IP OSI model routing and switching,true,4.6,35,150,90
+105,Cloud Architecture,Cloud design patterns multi-cloud strategies and infrastructure planning,true,4.7,42,200,120
+106,Serverless Computing,Functions as a service AWS Lambda Azure Functions and serverless architectures,true,4.5,30,150,90
+107,Jenkins CI/CD,Continuous integration deployment pipelines and automated workflows,true,4.4,28,150,90
+108,Terraform Infrastructure,Infrastructure as code cloud provisioning and resource management,true,4.6,35,200,120
+109,Ansible Automation,Configuration management IT automation and infrastructure orchestration,true,4.5,32,150,90
+110,Monitoring Prometheus,System monitoring metrics collection alerting and observability,true,4.4,25,100,60
+111,ELK Stack Logging,Elasticsearch Logstash Kibana for log management and analysis,true,4.5,30,150,90
+112,Message Queues RabbitMQ,Asynchronous messaging message brokers and distributed systems,true,4.3,22,100,60
+113,Apache Kafka Streaming,Event streaming real-time data pipelines and distributed messaging,true,4.6,38,200,120
+114,gRPC Framework,High-performance RPC framework protocol buffers and service communication,true,4.4,24,100,60
+115,OAuth Authentication,Secure authentication authorization protocols and identity management,true,4.5,18,100,60
+116,JWT Token Security,JSON Web Tokens stateless authentication and API security,true,4.4,12,50,30
+117,SSL TLS Certificates,Transport security encryption certificates and secure communications,true,4.3,16,50,30
+118,Penetration Testing,Security assessment vulnerability exploitation and penetration methodologies,true,4.6,45,220,132
+119,OWASP Top 10,Web application security common vulnerabilities and mitigation strategies,true,4.5,20,100,60
+120,Cryptography Basics,Encryption algorithms hashing digital signatures and cryptographic protocols,true,4.6,28,150,90
+121,Cloud Security,Cloud security best practices identity management and compliance,true,4.5,35,200,120
+122,Mobile Security,Mobile app security secure coding and threat modeling,true,4.4,30,150,90
+123,Incident Response,Security incident handling forensics and response procedures,true,4.3,32,150,90
+124,Compliance GDPR,Data protection regulations privacy laws and compliance requirements,true,4.2,18,100,60
+125,Business Intelligence,BI strategies data-driven decisions and analytics frameworks,true,4.4,28,150,90
+126,Data Mining Techniques,Pattern discovery association rules clustering and predictive analytics,true,4.5,35,200,120
+127,Statistical Analysis,Statistical methods hypothesis testing and inferential statistics,true,4.6,30,150,90
+128,Time Series Analysis,Temporal data analysis forecasting and time series models,true,4.4,32,150,90
+129,AB Testing,Experiment design hypothesis testing and conversion optimization,true,4.3,16,50,30
+130,Google Analytics,Web analytics traffic analysis user behavior and conversion tracking,true,4.5,14,50,30
+131,Marketing Analytics,Digital marketing metrics campaign analysis and ROI measurement,true,4.2,18,100,60
+132,Product Management,Product strategy roadmaps user stories and stakeholder management,true,4.4,24,100,60
+133,Project Management,Project planning scheduling risk management and execution strategies,true,4.3,22,100,60
+134,JIRA Administration,Issue tracking agile boards workflow management and team collaboration,true,4.2,10,30,18
+135,Technical Writing,Documentation user guides API documentation and clear communication,true,4.5,16,50,30
+136,API Documentation,REST API docs OpenAPI Swagger and developer resources,true,4.4,14,50,30
+137,Software Requirements,Requirements gathering analysis specifications and stakeholder engagement,true,4.3,18,100,60
+138,User Story Mapping,Agile planning user journeys and feature prioritization techniques,true,4.2,12,50,30
+139,Data Governance,Data quality metadata management data lineage and governance frameworks,true,4.4,26,150,90
+140,Master Data Management,MDM strategies data integration and enterprise data architecture,true,4.3,30,150,90
+141,ETL Development,Extract transform load processes data integration and pipeline development,true,4.5,35,200,120
+142,Apache Airflow,Workflow orchestration DAGs scheduling and data pipeline automation,true,4.4,28,150,90
+143,Snowflake Data Platform,Cloud data warehouse SQL analytics and data sharing,true,4.6,32,150,90
+144,Databricks Platform,Unified analytics lakehouse Apache Spark and collaborative notebooks,true,4.5,35,200,120
+145,dbt Data Transformation,Analytics engineering data modeling and transformation workflows,true,4.4,22,100,60
+146,Data Quality,Data validation cleansing profiling and quality assurance processes,true,4.3,20,100,60
+147,Feature Engineering,ML feature creation selection transformation and dimensionality reduction,true,4.6,30,150,90
+148,Model Deployment MLOps,Machine learning operations model serving monitoring and versioning,true,4.7,40,200,120
+149,AutoML Techniques,Automated machine learning hyperparameter tuning and model selection,true,4.4,25,150,90
+150,Recommender Systems,Collaborative filtering content-based recommendations and personalization,true,4.5,32,150,90
+151,Anomaly Detection,Outlier detection fraud detection and statistical anomaly methods,true,4.4,28,150,90
+152,Reinforcement Learning,RL algorithms Q-learning policy gradients and agent training,true,4.7,48,220,132
+153,Transfer Learning,Pre-trained models fine-tuning and domain adaptation techniques,true,4.5,30,150,90
+154,Model Interpretability,Explainable AI SHAP LIME and model transparency techniques,true,4.4,24,100,60
+155,AI Ethics,Responsible AI bias mitigation fairness and ethical considerations,true,4.3,16,50,30
+156,ChatGPT Prompt Engineering,Effective prompting few-shot learning and LLM applications,true,4.6,12,50,30
+157,LangChain Framework,Build LLM applications chains agents and language model workflows,true,4.5,28,150,90
+158,Vector Databases,Embedding storage similarity search and vector retrieval systems,true,4.4,22,100,60
+159,RAG Retrieval Systems,Retrieval augmented generation document QA and knowledge bases,true,4.6,26,150,90
+160,Fine-tuning LLMs,Language model customization adapter methods and domain adaptation,true,4.7,35,200,120
+161,Computer Architecture,CPU design memory hierarchy instruction sets and hardware organization,true,4.5,38,200,120
+162,Operating Systems,Process management memory management file systems and OS concepts,true,4.6,42,200,120
+163,Compiler Design,Lexical analysis parsing code generation and compiler construction,true,4.4,45,220,132
+164,Database Internals,DBMS architecture indexing query optimization and storage engines,true,4.5,40,200,120
+165,Distributed Systems,Consistency replication fault tolerance and distributed algorithms,true,4.7,50,220,132
+166,Network Programming,Socket programming network protocols and distributed applications,true,4.4,32,150,90
+167,Parallel Computing,Multi-threading multiprocessing GPU programming and parallel algorithms,true,4.6,38,200,120
+168,Quantum Computing Intro,Quantum mechanics qubits quantum gates and quantum algorithms,true,4.3,30,150,90
+169,Information Theory,Entropy coding theory compression and communication fundamentals,true,4.2,28,150,90
+170,Computational Complexity,Algorithm complexity P vs NP NP-completeness and computational limits,true,4.5,32,150,90
+171,Graph Theory,Graph algorithms shortest paths spanning trees and network analysis,true,4.4,26,100,60
+172,Linear Algebra,Matrices vectors transformations and applications in computing,true,4.6,30,150,90
+173,Discrete Mathematics,Logic sets combinatorics and discrete structures for CS,true,4.5,35,150,90
+174,Calculus for CS,Differential calculus integral calculus and computational applications,true,4.3,28,150,90
+175,Probability Statistics,Probability theory distributions random variables and statistical inference,true,4.6,32,150,90
+176,Numerical Methods,Numerical algorithms scientific computing and approximation techniques,true,4.4,30,150,90
+177,Computer Vision OpenCV,Image processing object detection and OpenCV library usage,true,4.7,40,200,120
+178,Speech Recognition,Audio processing speech-to-text ASR models and voice interfaces,true,4.5,35,200,120
+179,Sentiment Analysis,Opinion mining text classification and emotion detection techniques,true,4.4,24,100,60
+180,Named Entity Recognition,Entity extraction information extraction and NLP tagging,true,4.3,22,100,60
+181,Text Generation,Language generation transformer models and creative AI applications,true,4.6,30,150,90
+182,Document Processing,PDF parsing OCR text extraction and document understanding,true,4.4,26,100,60
+183,Search Engine Development,Information retrieval indexing ranking and search algorithms,true,4.5,38,200,120
+184,Web Scraping Python,Data extraction BeautifulSoup Scrapy and web automation,true,4.3,20,100,60
+185,Data Pipeline Automation,Workflow automation scheduling and data engineering best practices,true,4.5,32,150,90
+186,Stream Processing,Real-time data processing event-driven architecture and streaming analytics,true,4.6,35,200,120
+187,Graph Databases Neo4j,Graph modeling Cypher query language and relationship-based data,true,4.4,28,150,90
+188,Time-Series Databases,InfluxDB TimescaleDB and specialized temporal data storage,true,4.3,24,100,60
+189,Elasticsearch Search,Full-text search distributed search and analytics engine,true,4.5,30,150,90
+190,Firebase Development,Backend as a service real-time database and app development,true,4.4,22,100,60
+191,Supabase Backend,Open-source Firebase alternative PostgreSQL and real-time features,true,4.5,24,100,60
+192,Headless CMS,Content management API-first CMS and content delivery,true,4.3,18,50,30
+193,WordPress Development,Theme development plugin creation and PHP customization,true,4.2,26,100,60
+194,E-commerce Shopify,Online store setup product management and Shopify customization,true,4.4,20,100,60
+195,Payment Gateway Integration,Stripe PayPal payment processing and transaction security,true,4.5,16,50,30
+196,Email Marketing Automation,Campaign management segmentation and marketing automation tools,true,4.2,14,50,30
+197,Social Media APIs,Twitter API Facebook Graph API and social integration,true,4.3,18,100,60
+198,Chatbot Development,Conversational AI dialog systems and bot frameworks,true,4.6,28,150,90
+199,Voice Assistant Skills,Alexa skills Google Actions and voice app development,true,4.4,22,100,60
+200,WebSockets Real-time,Bi-directional communication real-time features and WebSocket protocol,true,4.5,16,50,30
+201,Server-Sent Events,Push notifications streaming data and SSE implementation,true,4.2,10,30,18
+202,WebRTC Communication,Peer-to-peer video audio and real-time communication,true,4.4,30,150,90
+203,Browser Extensions,Chrome extensions Firefox add-ons and browser API development,true,4.3,20,100,60
+204,Desktop Apps Electron,Cross-platform desktop applications with web technologies,true,4.5,32,150,90
+205,Cross-platform Qt,Native applications C++ Qt framework and GUI development,true,4.2,38,200,120
+206,Windows Forms .NET,Windows desktop development GUI controls and event handling,true,3.9,28,100,60
+207,WPF XAML Development,Windows Presentation Foundation modern UI and data binding,true,4.1,35,150,90
+208,macOS Swift Development,Native Mac applications AppKit and macOS SDK,true,4.4,40,200,120
+209,Linux GTK Programming,GNOME applications GTK+ toolkit and Linux GUI development,true,4.0,32,150,90
+210,Game Physics Programming,Collision detection rigid body dynamics and physics engines,true,4.6,35,200,120
+211,Shader Programming,GLSL HLSL graphics shaders and visual effects,true,4.5,30,150,90
+212,3D Modeling Blender,3D modeling texturing animation and Blender Python scripting,true,4.4,28,100,60
+213,Motion Graphics,After Effects animation keyframing and motion design,true,4.2,24,100,60
+214,Video Processing FFmpeg,Video encoding transcoding streaming and media manipulation,true,4.3,20,100,60
+215,Audio Processing,DSP sound synthesis audio effects and music programming,true,4.4,26,150,90
+216,MIDI Programming,Musical instrument digital interface music software and sequencing,true,4.1,18,50,30
+217,Image Recognition,CNN architectures classification detection and vision applications,true,4.7,42,200,120
+218,Facial Recognition,Face detection biometric systems and identity verification,true,4.4,32,150,90
+219,Object Tracking,Video tracking motion analysis and surveillance systems,true,4.5,30,150,90
+220,Pose Estimation,Human pose detection skeleton tracking and motion capture,true,4.6,28,150,90
+221,Semantic Segmentation,Pixel-level classification scene understanding and image segmentation,true,4.5,35,200,120
+222,Generative AI,GANs diffusion models and AI-generated content,true,4.8,45,220,132
+223,Image Synthesis,Style transfer neural art and image generation techniques,true,4.6,32,150,90
+224,Video Generation,Temporal models video synthesis and motion prediction,true,4.4,38,200,120
+225,3D Reconstruction,Structure from motion photogrammetry and 3D scene modeling,true,4.5,40,200,120
+226,SLAM Robotics,Simultaneous localization mapping autonomous navigation systems,true,4.7,48,220,132
+227,Robot Operating System,ROS framework robot programming and autonomous systems,true,4.6,42,200,120
+228,Drone Programming,UAV development flight control and autonomous drones,true,4.4,35,150,90
+229,Industrial Automation,PLC programming SCADA systems and manufacturing automation,true,4.2,38,200,120
+230,Edge Computing,Edge AI local processing and distributed edge architectures,true,4.5,28,150,90
+231,5G Networks,Fifth generation wireless millimeter wave and network slicing,true,4.3,26,100,60
+232,SDN Software Networking,Software-defined networks OpenFlow and network virtualization,true,4.4,32,150,90
+233,Network Function Virtualization,NFV architectures virtual network functions and orchestration,true,4.2,30,150,90
+234,Load Balancing,Traffic distribution high availability and scalability strategies,true,4.5,20,100,60
+235,Content Delivery Networks,CDN architecture edge caching and global content distribution,true,4.3,22,100,60
+236,API Gateway,API management routing rate limiting and gateway patterns,true,4.6,24,100,60
+237,Service Mesh,Istio Linkerd microservice communication and traffic management,true,4.4,30,150,90
+238,Observability Engineering,Metrics logs traces and system visibility,true,4.5,28,150,90
+239,Site Reliability Engineering,SRE principles incident management and system reliability,true,4.7,35,200,120
+240,Chaos Engineering,Resilience testing failure injection and system robustness,true,4.4,22,100,60
+241,Performance Testing,Load testing stress testing and performance benchmarking,true,4.5,26,100,60
+242,Security Testing,SAST DAST penetration testing and vulnerability scanning,true,4.6,32,150,90
+243,Mobile Testing Appium,Mobile automation cross-platform testing and Appium framework,true,4.3,28,150,90
+244,Cypress Testing,End-to-end testing JavaScript test automation and Cypress framework,true,4.5,22,100,60
+245,Jest Unit Testing,JavaScript testing React testing and Jest framework,true,4.4,16,50,30
+246,PyTest Framework,Python testing fixtures mocking and test automation,true,4.5,18,50,30
+247,JUnit Testing,Java unit testing TDD practices and testing frameworks,true,4.3,20,100,60
+248,Contract Testing,API contracts consumer-driven testing and service integration,true,4.2,16,50,30
+249,Behavior-Driven Development,BDD Cucumber Gherkin and specification by example,true,4.4,18,100,60
+250,Continuous Testing,Test automation CI/CD integration and shift-left testing,true,4.5,22,100,60
+251,Code Coverage Analysis,Test coverage metrics coverage tools and quality metrics,true,4.3,12,50,30
+252,Static Code Analysis,Linting code quality tools and automated code review,true,4.4,14,50,30
+253,Security Code Review,Secure coding OWASP standards and code security analysis,true,4.6,24,100,60
+254,Technical Debt Management,Code quality maintainability and refactoring strategies,true,4.2,16,50,30
+255,Legacy Code Modernization,Code migration refactoring and system modernization,true,4.3,28,150,90
+256,Open Source Contribution,Contributing to projects pull requests and community engagement,true,4.5,12,30,18
+257,GitHub Actions,Workflow automation CI/CD pipelines and GitHub integration,true,4.6,16,50,30
+258,GitLab CI/CD,Continuous integration pipeline configuration and DevOps automation,true,4.4,18,50,30
+259,Bitbucket Pipelines,CI/CD workflows Atlassian integration and deployment automation,true,4.2,14,50,30
+260,Package Management npm,Node package manager dependency management and package publishing,true,4.3,10,30,18
+261,Maven Build Tool,Java build automation dependency management and project structure,true,4.1,16,50,30
+262,Gradle Build System,Build automation multi-project builds and dependency resolution,true,4.2,18,50,30
+263,Dependency Injection,DI patterns IoC containers and loose coupling principles,true,4.5,20,100,60
+264,Event-Driven Architecture,Event sourcing CQRS messaging patterns and asynchronous systems,true,4.6,32,150,90
+265,Domain-Driven Design,DDD strategic design bounded contexts and tactical patterns,true,4.7,35,200,120
+266,SOLID Principles,Software design principles object-oriented best practices,true,4.8,16,50,30
+267,Hexagonal Architecture,Ports and adapters clean architecture and application boundaries,true,4.4,24,100,60
+268,CQRS Pattern,Command query responsibility segregation and event sourcing,true,4.5,28,150,90
+269,Repository Pattern,Data access abstraction persistence layer and design patterns,true,4.3,18,50,30
+270,Factory Pattern,Creational patterns object instantiation and factory methods,true,4.2,14,50,30
+271,Observer Pattern,Behavioral patterns pub-sub event handling and notifications,true,4.4,16,50,30
+272,Strategy Pattern,Algorithm selection encapsulation and behavioral flexibility,true,4.3,14,50,30
+273,Singleton Pattern,Creational pattern single instance and global access,true,4.1,10,30,18
+274,Adapter Pattern,Structural pattern interface compatibility and legacy integration,true,4.2,12,50,30
+275,Decorator Pattern,Structural pattern dynamic behavior and object enhancement,true,4.3,14,50,30
+276,Facade Pattern,Structural pattern simplified interface and subsystem encapsulation,true,4.2,12,30,18
+277,MVC Architecture,Model-View-Controller separation of concerns and web patterns,true,4.5,18,50,30
+278,MVVM Pattern,Model-View-ViewModel data binding and UI patterns,true,4.4,20,100,60
+279,MVP Pattern,Model-View-Presenter presentation logic and testability,true,4.2,16,50,30
+280,Flux Architecture,Unidirectional data flow state management and React patterns,true,4.3,18,50,30
+281,Redux State Management,Predictable state containers actions reducers and middleware,true,4.6,24,100,60
+282,MobX Reactive State,Observable state reactive programming and automatic updates,true,4.4,20,100,60
+283,Context API React,React context state sharing and component communication,true,4.5,14,50,30
+284,Zustand State Library,Lightweight state management hooks-based and minimal boilerplate,true,4.3,12,30,18
+285,Recoil State Management,Atomic state graph-based and React concurrent mode,true,4.2,16,50,30
+286,Jotai Primitive State,Atomic approach bottom-up state and React integration,true,4.1,12,30,18
+287,Valtio Proxy State,Proxy-based state mutable syntax and reactive updates,true,4.0,10,30,18
+288,XState State Machines,Finite state machines statecharts and complex logic,true,4.5,26,100,60
+289,Form Validation,Input validation error handling and user feedback,true,4.3,12,50,30
+290,React Hook Form,Performance-focused forms validation and React hooks,true,4.6,16,50,30
+291,Formik Forms,Form management validation schemas and form state,true,4.4,18,50,30
+292,Yup Validation Schema,Object schema validation data validation and type safety,true,4.2,8,30,18
+293,Zod TypeScript Schema,Type-safe validation parsing and schema definition,true,4.5,12,50,30
+294,Authentication Systems,User authentication session management and security,true,4.7,30,150,90
+295,Authorization RBAC,Role-based access control permissions and security models,true,4.6,24,100,60
+296,Multi-Factor Authentication,2FA security tokens and enhanced authentication,true,4.5,18,50,30
+297,Single Sign-On SSO,Federated identity SAML OAuth and authentication protocols,true,4.4,22,100,60
+298,Identity Management,User provisioning identity federation and IAM systems,true,4.3,28,150,90
+299,LDAP Directory Services,Lightweight directory access protocol directory management,true,4.1,20,100,60
+300,Active Directory,Windows domain services user management and group policy,true,4.0,24,100,60
+301,Keycloak Identity,Open-source identity and access management SSO solutions,true,4.4,26,150,90
+302,Auth0 Platform,Identity as a service authentication APIs and integrations,true,4.5,16,50,30
+303,Okta Identity Cloud,Enterprise identity management SSO and security,true,4.3,18,100,60
+304,Password Security,Hashing salting bcrypt and secure credential storage,true,4.6,14,50,30
+305,Session Management,Session tokens cookies and stateful authentication,true,4.4,16,50,30
+306,CORS Cross-Origin,Cross-origin resource sharing browser security and web APIs,true,4.3,10,30,18
+307,Content Security Policy,CSP headers XSS prevention and browser security,true,4.5,12,50,30
+308,SQL Injection Prevention,Input sanitization parameterized queries and security,true,4.7,16,50,30
+309,XSS Protection,Cross-site scripting prevention output encoding and filtering,true,4.6,14,50,30
+310,CSRF Prevention,Cross-site request forgery tokens and security measures,true,4.5,12,30,18
+311,API Rate Limiting,Throttling request limits and abuse prevention,true,4.4,14,50,30
+312,DDoS Protection,Distributed denial of service mitigation and traffic filtering,true,4.3,20,100,60
+313,Web Application Firewall,WAF configuration attack detection and protection rules,true,4.5,24,100,60
+314,Intrusion Detection Systems,Network monitoring threat detection and security alerts,true,4.4,28,150,90
+315,Security Information Events,SIEM platforms log analysis and security monitoring,true,4.2,32,150,90
+316,Vulnerability Management,Security scanning patch management and risk assessment,true,4.5,26,150,90
+317,Security Auditing,Compliance audits security assessments and reporting,true,4.3,22,100,60
+318,Digital Forensics,Incident investigation evidence collection and analysis,true,4.4,35,200,120
+319,Malware Analysis,Threat analysis reverse engineering and malware detection,true,4.6,40,200,120
+320,Reverse Engineering,Binary analysis disassembly and code decompilation,true,4.5,42,220,132
+321,Binary Exploitation,Buffer overflows memory corruption and exploit development,true,4.4,45,220,132
+322,Wireless Security,WiFi security WPA encryption and network protection,true,4.3,22,100,60
+323,Bluetooth Security,BLE security pairing vulnerabilities and IoT protection,true,4.2,18,50,30
+324,Mobile Forensics,Mobile device analysis data recovery and investigation,true,4.4,28,150,90
+325,Cloud Forensics,Cloud investigation data preservation and digital evidence,true,4.3,30,150,90
+326,Threat Intelligence,Threat hunting IOCs adversary tactics and security analysis,true,4.6,32,200,120
+327,Red Team Operations,Offensive security attack simulation and adversary emulation,true,4.7,50,250,150
+328,Blue Team Defense,Defensive security threat detection and incident response,true,4.6,45,220,132
+329,Purple Team Collaboration,Integrated security offensive and defensive cooperation,true,4.5,28,150,90
+330,Bug Bounty Hunting,Vulnerability research responsible disclosure and rewards,true,4.4,24,100,60
+331,Web Application Testing,OWASP testing methodology security assessment,true,4.6,35,200,120
+332,Mobile App Security Testing,Android iOS security mobile penetration testing,true,4.5,38,200,120
+333,API Security Testing,REST GraphQL security authentication and authorization testing,true,4.6,28,150,90
+334,Container Security,Docker security image scanning and runtime protection,true,4.5,26,150,90
+335,Kubernetes Security,Pod security policies RBAC and cluster hardening,true,4.7,35,200,120
+336,Secrets Management,Vault HashiCorp credential storage and secrets rotation,true,4.4,22,100,60
+337,Zero Trust Architecture,Zero trust security micro-segmentation and identity verification,true,4.6,30,150,90
+338,Blockchain Security,Smart contract audits consensus security and crypto vulnerabilities,true,4.5,32,200,120
+339,Privacy Engineering,Privacy by design GDPR compliance and data protection,true,4.3,24,100,60
+340,Secure Software Development,SDLC security secure coding and security requirements,true,4.7,28,150,90
+341,Threat Modeling,Attack trees STRIDE risk analysis and security design,true,4.6,22,100,60
+342,Security Automation,SOAR platforms automated response and security orchestration,true,4.4,30,150,90
+343,Endpoint Security,EDR antivirus host protection and endpoint management,true,4.3,24,100,60
+344,Data Loss Prevention,DLP policies data classification and leakage prevention,true,4.2,26,150,90
+345,Email Security,Phishing prevention SPF DKIM DMARC and email filtering,true,4.4,18,50,30
+346,Browser Security,Browser hardening secure browsing and web security,true,4.3,14,50,30
+347,Hardware Security,TPM secure boot hardware encryption and firmware security,true,4.5,28,150,90
+348,Biometric Security,Fingerprint face recognition and biometric authentication,true,4.4,20,100,60
+349,Smart Card Security,PKI chip cards certificate authentication and access control,true,4.1,22,100,60
+350,Quantum Cryptography,Post-quantum cryptography quantum key distribution and future security,true,4.3,35,200,120
