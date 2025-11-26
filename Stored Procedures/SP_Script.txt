@@ -1,0 +1,1595 @@
+--> QuestionChoices
+--Select
+CREATE OR ALTER PROCEDURE GetQuestionChoiceByID
+    @QuestionID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SELECT * 
+    FROM QuestionChoices
+    WHERE q_ID = @QuestionID;
+END;
+GO
+
+--Insert
+CREATE OR ALTER PROCEDURE InsertQuestionChoice
+    @choiceText VARCHAR(100),
+    @questionID INT,
+    @IsCorrect INT	
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRY
+        INSERT INTO QuestionChoices ( Choices,q_ID,Is_Correct)
+        VALUES (@choiceText,@questionID,@IsCorrect);
+        SELECT SCOPE_IDENTITY() AS NewQuestionChoiceID;
+    END TRY
+    BEGIN CATCH
+        SELECT ERROR_NUMBER() AS ErrorNumber, ERROR_MESSAGE() AS ErrorMessage;
+    END CATCH
+END
+GO
+
+--Update
+CREATE OR ALTER PROCEDURE UpdateQuestionChoice
+    @qcID INT,
+    @newChoiceText VARCHAR(100),
+    @newIsCorrect INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRY
+        UPDATE QuestionChoices
+        SET 
+	   Choices = @newChoiceText,
+           Is_Correct =@newIsCorrect
+        WHERE q_ID = @qcID;
+        
+        IF @@ROWCOUNT = 0 THROW 50021, 'QuestionChoice ID not found for update.', 1;
+    END TRY
+    BEGIN CATCH
+        SELECT ERROR_NUMBER() AS ErrorNumber, ERROR_MESSAGE() AS ErrorMessage;
+    END CATCH
+END
+GO
+
+--Delete
+CREATE PROCEDURE DeleteQuestionChoice
+    @qcID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRY
+        DELETE FROM QuestionChoices WHERE q_ID = @qcID;
+        
+        IF @@ROWCOUNT = 0 THROW 50022, 'QuestionChoice ID not found for deletion.', 1;
+    END TRY
+    BEGIN CATCH
+        SELECT ERROR_NUMBER() AS ErrorNumber, ERROR_MESSAGE() AS ErrorMessage;
+    END CATCH
+END
+GO
+-----------------------------------------------------
+--> University
+-- Select
+CREATE OR ALTER PROCEDURE GetUniversityByID
+    @UniversityID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SELECT * 
+    FROM University
+    WHERE u_ID = @UniversityID;
+END;
+GO
+
+--Insert
+
+CREATE OR ALTER PROCEDURE InsertUniversity
+    @name VARCHAR(100),
+    @location VARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRY
+        INSERT INTO University (u_name, u_location)
+        VALUES (@name, @location);
+        
+        SELECT SCOPE_IDENTITY() AS NewUniversityID;
+    END TRY
+    BEGIN CATCH
+        SELECT ERROR_NUMBER() AS ErrorNumber, ERROR_MESSAGE() AS ErrorMessage;
+    END CATCH
+END
+GO
+
+-- Update
+
+CREATE OR ALTER PROCEDURE UpdateUniversity
+    @universityID INT,
+    @name VARCHAR(100) = NULL,
+    @location VARCHAR(50) = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRY
+        UPDATE University
+        SET
+            u_name = ISNULL(@name, u_name),
+            u_location = ISNULL(@location, u_location)
+        WHERE u_ID = @universityID;
+        
+        IF @@ROWCOUNT = 0 
+        BEGIN
+            THROW 50023, 'University ID not found for update.', 1;
+		 END;
+     END TRY
+    BEGIN CATCH
+        SELECT ERROR_NUMBER() AS ErrorNumber, ERROR_MESSAGE() AS ErrorMessage;
+    END CATCH
+END;
+GO
+
+-- Delete
+
+CREATE OR ALTER PROCEDURE DeleteUniversity
+    @universityID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRY
+        DELETE FROM University
+        WHERE u_ID = @universityID;
+        
+        IF @@ROWCOUNT = 0 
+        BEGIN
+            THROW 50024, 'University ID not found for deletion.', 1;
+        END
+	END TRY
+    BEGIN CATCH
+        IF ERROR_NUMBER() = 547 -- Foreign Key Constraint Error
+       
+            SELECT ERROR_NUMBER() AS ErrorNumber, 
+                   'Cannot delete. University is linked to one or more Faculty records.' AS ErrorMessage;
+      
+        ELSE
+        
+            SELECT ERROR_NUMBER() AS ErrorNumber, ERROR_MESSAGE() AS ErrorMessage;
+       
+    END CATCH
+END
+GO
+-----------------------------------------------------------
+--> Batch
+-- Select
+CREATE OR ALTER PROCEDURE GetBatchByID
+    @BatchID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SELECT * 
+    FROM Batch
+    WHERE ba_ID = @BatchID;
+END;
+GO
+
+----> Insert
+ CREATE OR ALTER PROCEDURE InsertBatch
+    @name VARCHAR(50),
+    @intakeName INT, 
+    @branchID INT,
+    @trackID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRY
+        INSERT INTO Batch (ba_name, In_name, br_ID, tr_ID)
+        VALUES (@name, @intakeName, @branchID, @trackID);
+        
+        SELECT SCOPE_IDENTITY() AS NewBatchID;
+    END TRY
+    BEGIN CATCH
+        IF ERROR_NUMBER() = 547 
+        BEGIN
+            SELECT ERROR_NUMBER() AS ErrorNumber, 
+                   'Invalid Branch ID or Track ID. Cannot insert batch record.' AS ErrorMessage;
+        END
+        ELSE
+        BEGIN
+            SELECT ERROR_NUMBER() AS ErrorNumber, ERROR_MESSAGE() AS ErrorMessage;
+        END
+    END CATCH
+END
+GO
+
+--Update
+
+CREATE PROCEDURE UpdateBatch
+    @batchID INT,
+    @name VARCHAR(50) = NULL,
+    @intakeName INT = NULL,
+    @branchID INT = NULL,
+    @trackID INT = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRY
+        UPDATE Batch
+        SET
+            ba_name = ISNULL(@name, ba_name),
+            In_name = ISNULL(@intakeName, In_name),
+            br_ID = ISNULL(@branchID, br_ID),
+            tr_ID = ISNULL(@trackID, tr_ID)
+        WHERE ba_ID = @batchID;
+        
+        IF @@ROWCOUNT = 0 
+        BEGIN
+            THROW 50025, 'Batch ID not found for update.', 1;
+        END
+    END TRY
+    BEGIN CATCH
+        IF ERROR_NUMBER() = 547 
+        BEGIN
+            SELECT ERROR_NUMBER() AS ErrorNumber, 
+                   'Invalid Branch ID or Track ID provided for update.' AS ErrorMessage;
+        END
+        ELSE
+        BEGIN
+            SELECT ERROR_NUMBER() AS ErrorNumber, ERROR_MESSAGE() AS ErrorMessage;
+        END
+    END CATCH
+END
+GO
+
+-- Delete
+
+CREATE PROCEDURE DeleteBatch
+    @batchID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRY
+        DELETE FROM Batch
+        WHERE ba_ID = @batchID;
+        
+        IF @@ROWCOUNT = 0 
+        BEGIN
+            THROW 50026, 'Batch ID not found for deletion.', 1;
+        END
+    END TRY
+    BEGIN CATCH
+        IF ERROR_NUMBER() = 547 
+        BEGIN
+            SELECT ERROR_NUMBER() AS ErrorNumber, 
+                   'Cannot delete this Batch because related records exist (e.g., Students, StudentExamProject). Delete those related records first.' AS ErrorMessage;
+        END
+        ELSE
+        BEGIN
+            SELECT ERROR_NUMBER() AS ErrorNumber, ERROR_MESSAGE() AS ErrorMessage;
+        END
+    END CATCH
+END
+GO
+------------------------------------------------------------
+--> Freelancing
+-- Select
+CREATE OR ALTER PROCEDURE GetFreelancingByID
+    @FreelancingID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SELECT * 
+    FROM Freelancing
+    WHERE fr_ID = @FreelancingID;
+END;
+GO
+
+-- Insert
+
+CREATE OR ALTER PROCEDURE InsertFreelancing
+    @jobFilled VARCHAR(100),
+    @tools VARCHAR(50),
+    @paymentMethod VARCHAR(50),
+    @platform VARCHAR(100)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRY
+        INSERT INTO Freelancing (fr_JobFilled, fr_Tools, fr_PaymentMethod, fr_Platform)
+        VALUES (@jobFilled, @tools, @paymentMethod, @platform);
+        
+        
+        SELECT SCOPE_IDENTITY() AS NewFreelancingID;
+    END TRY
+    BEGIN CATCH
+        SELECT ERROR_NUMBER() AS ErrorNumber, ERROR_MESSAGE() AS ErrorMessage;
+    END CATCH
+END
+GO
+
+-- Update
+
+CREATE OR ALTER PROCEDURE UpdateFreelancing
+    @frID INT,
+    @jobFilled VARCHAR(100) = NULL,
+    @tools VARCHAR(50) = NULL,
+    @paymentMethod VARCHAR(50) = NULL,
+    @platform VARCHAR(100) = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRY
+        UPDATE Freelancing
+        SET
+            fr_JobFilled = ISNULL(@jobFilled, fr_JobFilled),
+            fr_Tools = ISNULL(@tools, fr_Tools),
+            fr_PaymentMethod = ISNULL(@paymentMethod, fr_PaymentMethod),
+            fr_Platform = ISNULL(@platform, fr_Platform)
+        WHERE fr_ID = @frID;
+        
+        IF @@ROWCOUNT = 0 
+        BEGIN
+            THROW 50027, 'Freelancing ID not found for update.', 1;
+        END
+    END TRY
+    BEGIN CATCH
+        SELECT ERROR_NUMBER() AS ErrorNumber, ERROR_MESSAGE() AS ErrorMessage;
+    END CATCH
+END
+GO
+
+-- Delete
+
+CREATE OR ALTER PROCEDURE DeleteFreelancing
+    @frID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRY
+        DELETE FROM Freelancing
+        WHERE fr_ID = @frID;
+        
+        IF @@ROWCOUNT = 0 
+        BEGIN
+            THROW 50028, 'Freelancing ID not found for deletion.', 1;
+        END
+    END TRY
+    BEGIN CATCH
+        IF ERROR_NUMBER() = 547 
+        BEGIN
+            SELECT ERROR_NUMBER() AS ErrorNumber, 
+                   'Cannot delete. This freelancing record is referenced by another table.' AS ErrorMessage;
+        END
+        ELSE
+        BEGIN
+            SELECT ERROR_NUMBER() AS ErrorNumber, ERROR_MESSAGE() AS ErrorMessage;
+        END
+    END CATCH
+END
+GO
+--------------------------------------------------------------
+--> StudentPhone
+-- Select
+CREATE OR ALTER PROCEDURE GetStudentPhoneByID
+    @StudentID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SELECT * 
+    FROM StudentPhone
+    WHERE st_ID = @StudentID;
+END;
+GO
+
+-- Insert
+
+CREATE OR ALTER PROCEDURE InsertStudentPhone
+    @studentID INT,
+    @phoneNumber VARCHAR(20)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRY
+        INSERT INTO StudentPhone (st_ID, st_phone)
+        VALUES (@studentID, @phoneNumber);
+    END TRY
+    BEGIN CATCH
+        IF ERROR_NUMBER() = 2627 
+        BEGIN
+            SELECT ERROR_NUMBER() AS ErrorNumber, 
+                   'This phone number is already registered for this student.' AS ErrorMessage;
+        END
+        ELSE IF ERROR_NUMBER() = 547 
+        BEGIN
+            SELECT ERROR_NUMBER() AS ErrorNumber, 
+                   'Invalid Student ID provided.' AS ErrorMessage;
+        END
+        ELSE
+        BEGIN
+            SELECT ERROR_NUMBER() AS ErrorNumber, ERROR_MESSAGE() AS ErrorMessage;
+        END
+    END CATCH
+END
+GO
+
+-- Update
+
+CREATE OR ALTER PROCEDURE UpdateStudentPhone
+    @studentID INT,
+    @oldPhoneNumber VARCHAR(20),
+    @newPhoneNumber VARCHAR(20)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRY
+        UPDATE StudentPhone
+        SET st_phone = @newPhoneNumber
+        WHERE st_ID = @studentID AND st_phone = @oldPhoneNumber;
+        
+        IF @@ROWCOUNT = 0 
+        BEGIN
+            THROW 50029, 'StudentPhone record not found for update.', 1;
+        END
+    END TRY
+    BEGIN CATCH
+        IF ERROR_NUMBER() = 2627 
+        BEGIN
+             SELECT ERROR_NUMBER() AS ErrorNumber, 
+                   'The new phone number is already in use by this student.' AS ErrorMessage;
+        END
+        ELSE
+        BEGIN
+            SELECT ERROR_NUMBER() AS ErrorNumber, ERROR_MESSAGE() AS ErrorMessage;
+        END
+    END CATCH
+END
+GO
+
+-- Delete
+
+CREATE PROCEDURE DeleteStudentPhone
+    @studentID INT,
+    @phoneNumber VARCHAR(20)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRY
+        DELETE FROM StudentPhone
+        WHERE st_ID = @studentID AND st_phone = @phoneNumber;
+        
+        IF @@ROWCOUNT = 0 
+        BEGIN
+            THROW 50030, 'StudentPhone record not found for deletion.', 1;
+        END
+    END TRY
+    BEGIN CATCH
+        SELECT ERROR_NUMBER() AS ErrorNumber, ERROR_MESSAGE() AS ErrorMessage;
+    END CATCH
+END
+GO
+---------------------------------------------------------------
+-->Course
+-- SELECT
+CREATE OR ALTER PROC sp_Select_Course
+AS
+BEGIN
+    SELECT * FROM Course;
+END;
+GO
+
+-- INSERT
+CREATE  OR ALTER PROC sp_Insert_Course
+    @cou_ID INT,
+    @cou_Name VARCHAR(25),
+    @cou_Description VARCHAR(250),
+    @cou_IsActive BIT,
+    @cou_Rating INT,
+    @cou_DurationHours INT,
+    @cou_MaxDegree INT,
+    @cou_MinDegree INT
+AS
+BEGIN TRY
+    INSERT INTO Course VALUES(@cou_ID,@cou_Name,@cou_Description,@cou_IsActive,@cou_Rating,@cou_DurationHours,@cou_MaxDegree,@cou_MinDegree);
+END TRY
+BEGIN CATCH
+    PRINT 'Error inserting Course'
+END CATCH;
+GO
+
+-- UPDATE
+CREATE OR ALTER PROC sp_Update_Course
+    @cou_ID INT,
+    @cou_Name VARCHAR(25),
+    @cou_Description VARCHAR(250),
+    @cou_IsActive BIT,
+    @cou_Rating INT,
+    @cou_DurationHours INT,
+    @cou_MaxDegree INT,
+    @cou_MinDegree INT
+AS
+BEGIN TRY
+    UPDATE Course
+    SET cou_Name=@cou_Name, cou_Description=@cou_Description, cou_IsActive=@cou_IsActive,
+        cou_Rating=@cou_Rating, cou_DurationHours=@cou_DurationHours,
+        cou_MaxDegree=@cou_MaxDegree, cou_MinDegree=@cou_MinDegree
+    WHERE cou_ID=@cou_ID;
+END TRY
+BEGIN CATCH
+    PRINT 'Error updating Course: ' 
+END CATCH;
+GO
+
+-- DELETE
+CREATE OR ALTER PROC sp_Delete_Course
+    @cou_ID INT
+AS
+BEGIN TRY
+    DELETE FROM Course WHERE cou_ID=@cou_ID;
+END TRY
+BEGIN CATCH
+    PRINT 'Error deleting Course:' 
+END CATCH;
+GO
+---------------------------------------------------------------------
+--> Certificate
+--Select
+CREATE OR ALTER PROC sp_Select_Certificate
+AS
+BEGIN
+    SELECT * FROM Certificate;
+END;
+GO
+
+--Insert
+CREATE OR ALTER PROC sp_Insert_Certificate
+    @cer_ID INT,
+    @cer_Name VARCHAR(25),
+    @cer_Duration INT,
+    @cer_Platform VARCHAR(50),
+    @st_ID INT
+AS
+BEGIN TRY
+    INSERT INTO Certificate VALUES(@cer_ID,@cer_Name,@cer_Duration,@cer_Platform,@st_ID);
+END TRY
+BEGIN CATCH
+    PRINT 'Error inserting Certificate: '
+END CATCH;
+GO
+
+--Update
+CREATE OR ALTER PROC sp_Update_Certificate
+    @cer_ID INT,
+    @cer_Name VARCHAR(25),
+    @cer_Duration INT,
+    @cer_Platform VARCHAR(50),
+    @st_ID INT
+AS
+BEGIN TRY
+    UPDATE Certificate
+    SET cer_Name=@cer_Name, cer_Duration=@cer_Duration, cer_Platform=@cer_Platform, st_ID=@st_ID
+    WHERE cer_ID=@cer_ID;
+END TRY
+BEGIN CATCH
+    PRINT 'Error updating Certificate: ' 
+END CATCH;
+GO
+
+--Delete
+CREATE  OR ALTER PROC sp_Delete_Certificate
+    @cer_ID INT
+AS
+BEGIN TRY
+    DELETE FROM Certificate WHERE cer_ID=@cer_ID;
+END TRY
+BEGIN CATCH
+    PRINT 'Error deleting Certificate: '
+END CATCH;
+GO
+----------------------------------------------------------------
+-->BatchExam
+--Select
+CREATE OR ALTER  PROC sp_Select_BatchExam
+AS
+BEGIN
+    SELECT * FROM BatchExam;
+END;
+GO
+
+--Insert
+CREATE OR ALTER PROC sp_Insert_BatchExam
+    @BatchExamDate DATE,
+    @ex_ID INT,
+    @ba_ID INT
+AS
+BEGIN TRY
+    INSERT INTO BatchExam VALUES(@BatchExamDate,@ex_ID,@ba_ID);
+END TRY
+BEGIN CATCH
+    PRINT 'Error inserting BatchExam: '
+END CATCH;
+GO
+
+--Update
+CREATE  OR ALTER PROC sp_Update_BatchExam
+    @BatchExamDate DATE,
+    @ex_ID INT,
+    @ba_ID INT
+AS
+BEGIN TRY
+    UPDATE BatchExam
+    SET BatchExamDate=@BatchExamDate
+    WHERE ex_ID=@ex_ID AND ba_ID=@ba_ID;
+END TRY
+BEGIN CATCH
+    PRINT 'Error updating BatchExam: '
+END CATCH;
+GO
+
+--Delete
+CREATE  OR ALTER PROC sp_Delete_BatchExam
+    @ex_ID INT,
+    @ba_ID INT
+AS
+BEGIN TRY
+    DELETE FROM BatchExam WHERE ex_ID=@ex_ID AND ba_ID=@ba_ID;
+END TRY
+BEGIN CATCH
+    PRINT 'Error deleting BatchExam: '
+END CATCH;
+GO
+
+----------------------------------------------------------
+-->StudentCourse
+--Select
+CREATE OR ALTER PROC sp_Select_StudentCourse
+AS
+BEGIN
+    SELECT * FROM StudentCourse;
+END;
+GO
+
+--Insert
+CREATE  OR ALTER PROC sp_Insert_StudentCourse
+    @st_ID INT,
+    @cou_ID INT
+AS
+BEGIN TRY
+    INSERT INTO StudentCourse VALUES(@st_ID,@cou_ID);
+END TRY
+BEGIN CATCH
+    PRINT 'Error inserting StudentCourse: '
+END CATCH;
+GO
+
+--Update
+CREATE OR ALTER PROC sp_Update_StudentCourse
+    @st_ID INT,
+    @Old_cou_ID INT,
+    @New_cou_ID INT
+AS
+BEGIN TRY
+    UPDATE StudentCourse
+    SET cou_ID=@New_cou_ID
+    WHERE st_ID=@st_ID AND cou_ID=@Old_cou_ID;
+END TRY
+BEGIN CATCH
+    PRINT 'Error updating StudentCourse: '
+END CATCH;
+GO
+
+--Delete
+CREATE OR ALTER  PROC sp_Delete_StudentCourse
+    @st_ID INT,
+    @cou_ID INT
+AS
+BEGIN TRY
+    DELETE FROM StudentCourse WHERE st_ID=@st_ID AND cou_ID=@cou_ID;
+END TRY
+BEGIN CATCH
+    PRINT 'Error deleting StudentCourse: '
+END CATCH;
+GO
+
+--------------------------------------------
+-->Faculty
+-- SELECT
+CREATE OR ALTER PROC sp_Select_Faculty
+AS
+BEGIN
+    SELECT * FROM Faculty;
+END;
+GO
+
+-- INSERT
+CREATE OR ALTER PROC sp_Insert_Faculty
+    @fa_ID INT,
+    @fa_Name VARCHAR(50)
+AS
+BEGIN TRY
+    INSERT INTO Faculty (fa_ID, fa_Name)
+    VALUES(@fa_ID, @fa_Name);
+END TRY
+BEGIN CATCH
+    PRINT 'Error inserting Faculty: ' 
+END CATCH;
+GO
+
+-- UPDATE
+CREATE OR ALTER PROC sp_Update_Faculty
+    @fa_ID INT,
+    @fa_Name VARCHAR(50)
+AS
+BEGIN TRY
+    UPDATE Faculty
+    SET fa_Name=@fa_Name
+    WHERE fa_ID=@fa_ID;
+END TRY
+BEGIN CATCH
+    PRINT 'Error updating Faculty: '
+END CATCH;
+GO
+
+-- DELETE
+CREATE OR ALTER PROC sp_Delete_Faculty
+    @fa_ID INT
+AS
+BEGIN TRY
+    DELETE FROM Faculty WHERE fa_ID=@fa_ID;
+END TRY
+BEGIN CATCH
+    PRINT 'Error deleting Faculty: ' 
+END CATCH;
+GO
+
+---------------------------------------------------
+-->GraduationProject
+--Select
+CREATE OR ALTER  PROC sp_Select_GraduationProject
+AS
+BEGIN
+    SELECT * FROM GraduationProject;
+END;
+GO
+
+--Insert
+CREATE OR ALTER  PROC sp_Insert_GraduationProject
+    @gp_ID INT,
+    @gp_Name VARCHAR(100),
+    @gp_Score INT
+AS
+BEGIN TRY
+    INSERT INTO GraduationProject VALUES(@gp_ID,@gp_Name,@gp_Score);
+END TRY
+BEGIN CATCH
+    PRINT 'Error inserting GraduationProject: ' 
+END CATCH;
+GO
+
+--Update
+CREATE  OR ALTER PROC sp_Update_GraduationProject
+    @gp_ID INT,
+    @gp_Name VARCHAR(100),
+    @gp_Score INT
+AS
+BEGIN TRY
+    UPDATE GraduationProject
+    SET gp_Name=@gp_Name, gp_Score=@gp_Score
+    WHERE gp_ID=@gp_ID;
+END TRY
+BEGIN CATCH
+    PRINT 'Error updating GraduationProject: '
+END CATCH;
+GO
+
+--Delete
+CREATE or alter  PROC sp_Delete_GraduationProject
+    @gp_ID INT
+AS
+BEGIN TRY
+    DELETE FROM GraduationProject WHERE gp_ID=@gp_ID;
+END TRY
+BEGIN CATCH
+    PRINT 'Error deleting GraduationProject: '
+END CATCH;
+GO
+------------------------------------------------------------
+-->ExamQuestion
+-- Select
+CREATE OR ALTER PROCEDURE sp_SelectExamQuestion
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        SELECT 
+            eq.ex_ID,
+            e.ex_Type AS ExamName,
+            eq.q_ID,
+            q.q_Text AS QuestionText,
+            q.q_Type,
+            q.q_Marks
+        FROM ExamQuestion eq
+        INNER JOIN Exam e ON eq.ex_ID = e.ex_ID
+        INNER JOIN Questions q ON eq.q_ID = q.q_ID
+        ORDER BY e.ex_Type, q.q_ID;
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error in sp_SelectExamQuestion: ' + ERROR_MESSAGE();
+    END CATCH
+END;
+GO
+
+
+-- Insert
+CREATE OR ALTER PROCEDURE sp_InsertExamQuestion
+    @ex_ID INT,
+    @q_ID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        -- Check if Exam exists
+        IF NOT EXISTS (SELECT 1 FROM Exam WHERE ex_ID = @ex_ID)
+        BEGIN
+            RAISERROR('Exam does not exist.', 16, 1);
+            RETURN;
+        END
+
+        -- Check if Question exists
+        IF NOT EXISTS (SELECT 1 FROM Questions WHERE q_ID = @q_ID)
+        BEGIN
+            RAISERROR('Question does not exist.', 16, 1);
+            RETURN;
+        END
+
+        -- Check if mapping already exists
+        IF EXISTS (SELECT 1 FROM ExamQuestion WHERE ex_ID = @ex_ID AND q_ID = @q_ID)
+        BEGIN
+            RAISERROR('This Question is already assigned to this Exam.', 16, 1);
+            RETURN;
+        END
+
+        INSERT INTO ExamQuestion (ex_ID, q_ID)
+        VALUES (@ex_ID, @q_ID);
+
+        PRINT 'ExamQuestion inserted successfully.';
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error in sp_InsertExamQuestion: ' + ERROR_MESSAGE();
+    END CATCH
+END;
+GO
+
+
+-- Update
+CREATE OR ALTER PROCEDURE sp_UpdateExamQuestion
+    @old_ex_ID INT,
+    @old_q_ID INT,
+    @new_ex_ID INT,
+    @new_q_ID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        -- Check if old mapping exists
+        IF NOT EXISTS (SELECT 1 FROM ExamQuestion WHERE ex_ID = @old_ex_ID AND q_ID = @old_q_ID)
+        BEGIN
+            RAISERROR('Old ExamQuestion mapping not found.', 16, 1);
+            RETURN;
+        END
+
+        -- Check if new Exam exists
+        IF NOT EXISTS (SELECT 1 FROM Exam WHERE ex_ID = @new_ex_ID)
+        BEGIN
+            RAISERROR('New Exam does not exist.', 16, 1);
+            RETURN;
+        END
+
+        -- Check if new Question exists
+        IF NOT EXISTS (SELECT 1 FROM Questions WHERE q_ID = @new_q_ID)
+        BEGIN
+            RAISERROR('New Question does not exist.', 16, 1);
+            RETURN;
+        END
+
+        -- Check if new mapping already exists
+        IF EXISTS (SELECT 1 FROM ExamQuestion WHERE ex_ID = @new_ex_ID AND q_ID = @new_q_ID)
+        BEGIN
+            RAISERROR('This new ExamQuestion mapping already exists.', 16, 1);
+            RETURN;
+        END
+
+        UPDATE ExamQuestion
+        SET ex_ID = @new_ex_ID,
+            q_ID = @new_q_ID
+        WHERE ex_ID = @old_ex_ID AND q_ID = @old_q_ID;
+
+        PRINT 'ExamQuestion updated successfully.';
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error in sp_UpdateExamQuestion: ' + ERROR_MESSAGE();
+    END CATCH
+END;
+GO
+
+
+-- Delete
+CREATE OR ALTER PROCEDURE sp_DeleteExamQuestion
+    @ex_ID INT,
+    @q_ID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        -- Check if mapping exists
+        IF NOT EXISTS (SELECT 1 FROM ExamQuestion WHERE ex_ID = @ex_ID AND q_ID = @q_ID)
+        BEGIN
+            RAISERROR('ExamQuestion mapping not found.', 16, 1);
+            RETURN;
+        END
+
+        DELETE FROM ExamQuestion
+        WHERE ex_ID = @ex_ID AND q_ID = @q_ID;
+
+        PRINT 'ExamQuestion deleted successfully.';
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error in sp_DeleteExamQuestion: ' + ERROR_MESSAGE();
+    END CATCH
+END;
+GO
+-----------------------------------------------------------
+--> Intake
+--- Select
+CREATE OR ALTER PROCEDURE sp_GetIntakes
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        SELECT in_Name, in_StartDate, in_EndDate
+        FROM Intake;
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error while selecting Intakes: ' + ERROR_MESSAGE();
+    END CATCH
+END;
+GO
+
+-- Insert
+CREATE OR ALTER PROCEDURE sp_InsertIntake
+    @in_Name INT,
+    @in_StartDate DATE,
+    @in_EndDate DATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        -- Check if Intake already exists
+        IF EXISTS (SELECT 1 FROM Intake WHERE in_Name = @in_Name)
+        BEGIN
+            PRINT 'Intake already exists.';
+            RETURN;
+        END
+
+        INSERT INTO Intake (in_Name, in_StartDate, in_EndDate)
+        VALUES (@in_Name, @in_StartDate, @in_EndDate);
+
+        PRINT 'Intake inserted successfully.';
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error while inserting Intake: ' + ERROR_MESSAGE();
+    END CATCH
+END;
+GO
+
+-- Update
+CREATE OR ALTER PROCEDURE sp_UpdateIntake
+    @in_Name INT,
+    @in_StartDate DATE,
+    @in_EndDate DATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        -- Check if Intake exists
+        IF NOT EXISTS (SELECT 1 FROM Intake WHERE in_Name = @in_Name)
+        BEGIN
+            PRINT 'Intake not found.';
+            RETURN;
+        END
+
+        UPDATE Intake
+        SET in_StartDate = @in_StartDate,
+            in_EndDate = @in_EndDate
+        WHERE in_Name = @in_Name;
+
+        PRINT 'Intake updated successfully.';
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error while updating Intake: ' + ERROR_MESSAGE();
+    END CATCH
+END;
+GO
+
+-- Delete
+CREATE OR ALTER PROCEDURE sp_DeleteIntake
+    @in_Name INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        -- Check if Intake exists
+        IF NOT EXISTS (SELECT 1 FROM Intake WHERE in_Name = @in_Name)
+        BEGIN
+            PRINT 'Intake not found.';
+            RETURN;
+        END
+
+        DELETE FROM Intake
+        WHERE in_Name = @in_Name;
+
+        PRINT 'Intake deleted successfully.';
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error while deleting Intake: ' + ERROR_MESSAGE();
+    END CATCH
+END;
+GO
+---------------------------------------------------------------------
+--> TrackCourses
+-- Select
+CREATE OR ALTER PROCEDURE sp_SelectTrackCourses
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        SELECT 
+            tc.tr_ID,
+            t.tr_Name AS TrackName,
+            tc.cou_ID,
+            c.cou_Name AS CourseName
+        FROM TrackCourses tc
+        INNER JOIN Track t ON tc.tr_ID = t.tr_ID
+        INNER JOIN Course c ON tc.cou_ID = c.cou_ID;
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error in sp_SelectTrackCourses: ' + ERROR_MESSAGE();
+    END CATCH
+END;
+GO
+
+-- Insert
+CREATE OR ALTER PROCEDURE sp_InsertTrackCourse
+    @tr_ID INT,
+    @cou_ID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        -- Check if Track exists
+        IF NOT EXISTS (SELECT 1 FROM Track WHERE tr_ID = @tr_ID)
+        BEGIN
+            RAISERROR('Track does not exist.', 16, 1);
+            RETURN;
+        END
+
+        -- Check if Course exists
+        IF NOT EXISTS (SELECT 1 FROM Course WHERE cou_ID = @cou_ID)
+        BEGIN
+            RAISERROR('Course does not exist.', 16, 1);
+            RETURN;
+        END
+
+        -- Check if mapping already exists
+        IF EXISTS (SELECT 1 FROM TrackCourses WHERE tr_ID = @tr_ID AND cou_ID = @cou_ID)
+        BEGIN
+            RAISERROR('This Track-Course mapping already exists.', 16, 1);
+            RETURN;
+        END
+
+        INSERT INTO TrackCourses (tr_ID, cou_ID)
+        VALUES (@tr_ID, @cou_ID);
+
+        PRINT 'TrackCourse inserted successfully.';
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error in sp_InsertTrackCourse: ' + ERROR_MESSAGE();
+    END CATCH
+END;
+GO
+
+-- Update
+CREATE OR ALTER PROCEDURE sp_UpdateTrackCourse
+    @old_tr_ID INT,
+    @old_cou_ID INT,
+    @new_tr_ID INT,
+    @new_cou_ID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        -- Check if old record exists
+        IF NOT EXISTS (SELECT 1 FROM TrackCourses WHERE tr_ID = @old_tr_ID AND cou_ID = @old_cou_ID)
+        BEGIN
+            RAISERROR('Old TrackCourse mapping not found.', 16, 1);
+            RETURN;
+        END
+
+        -- Check if new Track exists
+        IF NOT EXISTS (SELECT 1 FROM Track WHERE tr_ID = @new_tr_ID)
+        BEGIN
+            RAISERROR('New Track does not exist.', 16, 1);
+            RETURN;
+        END
+
+        -- Check if new Course exists
+        IF NOT EXISTS (SELECT 1 FROM Course WHERE cou_ID = @new_cou_ID)
+        BEGIN
+            RAISERROR('New Course does not exist.', 16, 1);
+            RETURN;
+        END
+
+        UPDATE TrackCourses
+        SET tr_ID = @new_tr_ID,
+            cou_ID = @new_cou_ID
+        WHERE tr_ID = @old_tr_ID AND cou_ID = @old_cou_ID;
+
+        PRINT 'TrackCourse updated successfully.';
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error in sp_UpdateTrackCourse: ' + ERROR_MESSAGE();
+    END CATCH
+END;
+GO
+
+-- Delete
+CREATE OR ALTER PROCEDURE sp_DeleteTrackCourse
+    @tr_ID INT,
+    @cou_ID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        -- Check if mapping exists
+        IF NOT EXISTS (SELECT 1 FROM TrackCourses WHERE tr_ID = @tr_ID AND cou_ID = @cou_ID)
+        BEGIN
+            RAISERROR('TrackCourse mapping not found.', 16, 1);
+            RETURN;
+        END
+
+        DELETE FROM TrackCourses
+        WHERE tr_ID = @tr_ID AND cou_ID = @cou_ID;
+
+        PRINT 'TrackCourse deleted successfully.';
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error in sp_DeleteTrackCourse: ' + ERROR_MESSAGE();
+    END CATCH
+END;
+GO
+-------------------------------------------------------------
+--> Student
+-- Select 
+CREATE OR ALTER PROCEDURE sp_GetStudents
+    @st_ID INT = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        IF @st_ID IS NULL
+            SELECT * FROM Student;
+        ELSE
+        BEGIN
+            IF EXISTS (SELECT 1 FROM Student WHERE st_ID = @st_ID)
+                SELECT * FROM Student WHERE st_ID = @st_ID;
+            ELSE
+                RAISERROR('Student not found.', 16, 1);
+        END
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error in sp_GetStudents: ' + ERROR_MESSAGE();
+    END CATCH
+END;
+GO
+
+
+-- Insert 
+CREATE OR ALTER PROCEDURE sp_InsertStudent
+	@st_ID INT,
+    @st_FirstName VARCHAR(25),
+    @st_LastName VARCHAR(25),
+    @st_Email VARCHAR(50),
+    @st_Gender NVARCHAR(10),
+    @st_Address VARCHAR(100),
+    @st_Password VARCHAR(25),
+    @st_GraduationStatus VARCHAR(50),
+    @st_AttendanceRate INT,
+    @st_BirthDate DATE,
+    @st_Salary INT,
+    @ba_ID INT,
+    @in_Name INT,
+    @br_ID INT,
+    @fa_ID INT,
+    @u_ID INT,
+    @tr_ID INT,
+    @co_ID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+       IF EXISTS (SELECT 1 FROM Student WHERE st_ID = @st_ID)
+	   BEGIN
+			RAISERROR('A student with this ID already exists.', 16, 1);
+			RETURN;
+	   END
+
+		IF EXISTS (SELECT 1 FROM Student WHERE st_Email = @st_Email)
+		BEGIN
+			RAISERROR('A student with this email already exists.', 16, 1);
+			RETURN;
+		END
+
+        INSERT INTO Student (
+            st_ID,st_FirstName, st_LastName, st_Email, st_Gender, st_Address, st_Password,
+            st_GraduationStatus, st_AttendanceRate, st_BirthDate, st_Salary,
+            ba_ID, in_Name, br_ID, fa_ID, u_ID, tr_ID, co_ID
+        )
+        VALUES (
+            @st_ID,@st_FirstName, @st_LastName, @st_Email, @st_Gender, @st_Address, @st_Password,
+            @st_GraduationStatus, @st_AttendanceRate, @st_BirthDate, @st_Salary,
+            @ba_ID, @in_Name, @br_ID, @fa_ID, @u_ID, @tr_ID, @co_ID
+        );
+
+        PRINT 'Student inserted successfully.';
+    END TRY
+
+    BEGIN CATCH
+        PRINT 'Error in sp_InsertStudent: ' + ERROR_MESSAGE();
+    END CATCH
+END;
+GO
+
+
+-- Update 
+CREATE OR ALTER PROCEDURE sp_UpdateStudent
+	@st_ID INT,
+    @st_FirstName VARCHAR(25),
+    @st_LastName VARCHAR(25),
+    @st_Email VARCHAR(50),
+    @st_Gender NVARCHAR(10),
+    @st_Address VARCHAR(100),
+    @st_Password VARCHAR(25),
+    @st_GraduationStatus VARCHAR(50),
+    @st_AttendanceRate INT,
+    @st_BirthDate DATE,
+    @st_Salary INT,
+    @ba_ID INT,
+    @in_Name INT,
+    @br_ID INT,
+    @fa_ID INT,
+    @u_ID INT,
+    @tr_ID INT,
+    @co_ID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRY
+        IF NOT EXISTS (SELECT 1 FROM Student WHERE st_ID = @st_ID)
+        BEGIN
+            RAISERROR('Student not found.', 16, 1);
+            RETURN;
+        END
+
+        -- منع تحديث الإيميل إلى إيميل مستخدم من قبل طالب آخر
+        IF EXISTS (SELECT 1 FROM Student WHERE st_Email = @st_Email AND st_ID = @st_ID)
+        BEGIN
+            RAISERROR('Email already used by another student.', 16, 1);
+            RETURN;
+        END
+
+        UPDATE Student
+        SET
+            st_FirstName = @st_FirstName,
+            st_LastName = @st_LastName,
+            st_Email = @st_Email,
+            st_Gender = @st_Gender,
+            st_Address = @st_Address,
+            st_Password = @st_Password,
+            st_GraduationStatus = @st_GraduationStatus,
+            st_AttendanceRate = @st_AttendanceRate,
+            st_BirthDate = @st_BirthDate,
+            st_Salary = @st_Salary,
+            ba_ID = @ba_ID,
+            in_Name = @in_Name,
+            br_ID = @br_ID,
+            fa_ID = @fa_ID,
+            u_ID = @u_ID,
+            tr_ID = @tr_ID,
+            co_ID = @co_ID
+        WHERE st_ID = @st_ID;
+
+        PRINT 'Student updated successfully.';
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error in sp_UpdateStudent: ' + ERROR_MESSAGE();
+    END CATCH
+END;
+GO
+
+
+-- Delete Student
+CREATE OR ALTER PROCEDURE sp_DeleteStudent
+    @st_ID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRY
+        IF NOT EXISTS (SELECT 1 FROM Student WHERE st_ID = @st_ID)
+        BEGIN
+            RAISERROR('Student not found.', 16, 1);
+            RETURN;
+        END
+
+        DELETE FROM Student WHERE st_ID = @st_ID;
+
+        PRINT 'Student deleted successfully.';
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error in sp_DeleteStudent: ' + ERROR_MESSAGE();
+    END CATCH
+END;
+GO
+------------------------------------------------------------------------
+--> Questions
+-- Select
+CREATE OR ALTER PROCEDURE sp_GetQuestions
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        SELECT q_ID, q_Difficulty, q_Text, q_Type, q_Marks, q_CorrectAnswer, cou_ID
+        FROM Questions;
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error while selecting Questions: ' + ERROR_MESSAGE();
+    END CATCH
+END;
+GO
+
+-- Insert
+CREATE OR ALTER PROCEDURE sp_InsertQuestion
+    @q_ID INT,
+    @q_Difficulty VARCHAR(25),
+    @q_Text VARCHAR(MAX),
+    @q_Type VARCHAR(50),
+    @q_Marks INT,
+    @q_CorrectAnswer VARCHAR(100),
+    @cou_ID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        -- Check if question already exists
+        IF EXISTS (SELECT 1 FROM Questions WHERE q_ID = @q_ID)
+        BEGIN
+            RAISERROR('Question with this ID already exists.', 16, 1);
+            RETURN;
+        END
+
+        -- Check if course exists
+        IF NOT EXISTS (SELECT 1 FROM Course WHERE cou_ID = @cou_ID)
+        BEGIN
+            RAISERROR('Course does not exist.', 16, 1);
+            RETURN;
+        END
+
+        INSERT INTO Questions (q_ID, q_Difficulty, q_Text, q_Type, q_Marks, q_CorrectAnswer, cou_ID)
+        VALUES (@q_ID, @q_Difficulty, @q_Text, @q_Type, @q_Marks, @q_CorrectAnswer, @cou_ID);
+
+        PRINT 'Question inserted successfully.';
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error in sp_InsertQuestion: ' + ERROR_MESSAGE();
+    END CATCH
+END;
+GO
+
+-- Update
+CREATE OR ALTER PROCEDURE sp_UpdateQuestion
+    @q_ID INT,
+    @q_Difficulty VARCHAR(25),
+    @q_Text VARCHAR(MAX),
+    @q_Type VARCHAR(50),
+    @q_Marks INT,
+    @q_CorrectAnswer VARCHAR(100),
+    @cou_ID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        -- Check if question exists
+        IF NOT EXISTS (SELECT 1 FROM Questions WHERE q_ID = @q_ID)
+        BEGIN
+            RAISERROR('Question not found.', 16, 1);
+            RETURN;
+        END
+
+        -- Check if course exists
+        IF NOT EXISTS (SELECT 1 FROM Course WHERE cou_ID = @cou_ID)
+        BEGIN
+            RAISERROR('Course does not exist.', 16, 1);
+            RETURN;
+        END
+
+        UPDATE Questions
+        SET 
+            q_Difficulty = @q_Difficulty,
+            q_Text = @q_Text,
+            q_Type = @q_Type,
+            q_Marks = @q_Marks,
+            q_CorrectAnswer = @q_CorrectAnswer,
+            cou_ID = @cou_ID
+        WHERE q_ID = @q_ID;
+
+        PRINT 'Question updated successfully.';
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error in sp_UpdateQuestion: ' + ERROR_MESSAGE();
+    END CATCH
+END;
+GO
+
+-- Delete
+CREATE OR ALTER PROCEDURE sp_DeleteQuestion
+    @q_ID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        -- Check if question exists
+        IF NOT EXISTS (SELECT 1 FROM Questions WHERE q_ID = @q_ID)
+        BEGIN
+            RAISERROR('Question not found.', 16, 1);
+            RETURN;
+        END
+
+        DELETE FROM Questions
+        WHERE q_ID = @q_ID;
+
+        PRINT 'Question deleted successfully.';
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error in sp_DeleteQuestion: ' + ERROR_MESSAGE();
+    END CATCH
+END;
+GO
+-----------------------------------------------------------------
+--> Company
+-- Select 
+CREATE OR ALTER PROCEDURE sp_GetCompanies
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        SELECT com_ID, com_Name, com_Size, com_Location, com_Domain
+        FROM Company;
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error occurred while fetching companies: ' + ERROR_MESSAGE();
+    END CATCH
+END;
+GO
+
+
+-- Insert
+CREATE OR ALTER PROCEDURE sp_InsertCompany
+	@com_ID INT,
+    @com_Name VARCHAR(100),
+    @com_Size VARCHAR(25),
+    @com_Location VARCHAR(50),
+    @com_Domain VARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+		IF EXISTS (SELECT 1 FROM Company WHERE com_ID = @com_ID)
+        BEGIN
+            RAISERROR('A Company with this ID already exists.', 16, 1);
+            RETURN;
+        END
+
+        INSERT INTO Company (com_ID, com_Name, com_Size, com_Location, com_Domain)
+        VALUES (@com_ID, @com_Name, @com_Size, @com_Location, @com_Domain);
+
+        PRINT 'Company inserted successfully.';
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error while inserting company: ' + ERROR_MESSAGE();
+    END CATCH
+END;
+GO
+
+
+-- Update
+CREATE OR ALTER PROCEDURE sp_UpdateCompany
+	@com_ID INT,
+    @com_Name VARCHAR(100),
+    @com_Size VARCHAR(25),
+    @com_Location VARCHAR(50),
+    @com_Domain VARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        IF NOT EXISTS (SELECT 1 FROM Company WHERE com_ID = @com_ID)
+        BEGIN
+            PRINT 'Company not found.';
+            RETURN;
+        END
+
+        UPDATE Company
+        SET com_Name = @com_Name,
+            com_Size = @com_Size,
+            com_Location = @com_Location,
+            com_Domain = @com_Domain
+        WHERE com_ID = @com_ID;
+
+        PRINT 'Company updated successfully.';
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error while updating company: ' + ERROR_MESSAGE();
+    END CATCH
+END;
+GO
+
+
+-- Delete
+CREATE OR ALTER PROCEDURE sp_DeleteCompany
+    @com_ID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        IF NOT EXISTS (SELECT 1 FROM Company WHERE com_ID = @com_ID)
+        BEGIN
+            PRINT 'Company not found.';
+            RETURN;
+        END
+
+        DELETE FROM Company
+        WHERE com_ID = @com_ID;
+
+        PRINT 'Company deleted successfully.';
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error while deleting company: ' + ERROR_MESSAGE();
+    END CATCH
+END;
+GO
+---------------------------------------------------------------
+
+
+
+
+
