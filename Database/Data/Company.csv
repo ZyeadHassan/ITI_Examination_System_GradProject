@@ -1,0 +1,101 @@
+com_ID,com_Name,com_Size,com_Location,com_Domain
+1,Vodafone Egypt,Large,Cairo,Telecommunications & Technology
+2,Orange Egypt,Large,Cairo,Telecommunications & Technology
+3,Etisalat Egypt,Large,Cairo,Telecommunications & Technology
+4,We (Telecom Egypt),Large,Giza,Telecommunications & Technology
+5,Fawry,Large,Cairo,Electronic Payments
+6,Swvl,Medium,Cairo,Transportation & Technology
+7,Vezeeta,Medium,Cairo,Digital Health
+8,InstaPay,Medium,Cairo,Digital Payments
+9,Premium,Medium,Cairo,Food Delivery
+10,Memfiz,Small,Alexandria,Software & Applications
+11,E-Finance,Large,Cairo,Financial Technology
+12,Banque Misr Digital,Large,Cairo,Digital Banking Services
+13,Valeo,Medium,Cairo,Electronic Payments
+14,Aman,Medium,Cairo,Electronic Payments
+15,Future Group,Large,Alexandria,Technology & Electronics
+16,ITIDA,Large,Cairo,IT Development
+17,Link Development,Medium,Cairo,Software & Tech Solutions
+18,Sysmatex,Medium,Cairo,Information Systems
+19,Technology For Aviation,Medium,Cairo,Aviation Software
+20,EGI,Small,Cairo,Software Solutions
+21,BIM Group,Medium,Cairo,Cybersecurity
+22,Smart IT,Small,Alexandria,IT Services
+23,Digital Point,Small,Cairo,Digital Marketing
+24,Creative Media,Small,Cairo,Digital Media
+25,Weposite,Small,Cairo,Web Development
+26,Network International,Large,Dubai,Digital Payments
+27,Careem,Large,Dubai,Smart Transportation
+28,Noon,Large,Dubai,E-commerce
+29,Souq.com (Amazon),Large,Dubai,E-commerce
+30,Talabat,Large,Kuwait,Food Delivery
+31,Zain Kuwait,Large,Kuwait,Telecommunications
+32,STC Saudi Arabia,Large,Riyadh,Telecommunications & Technology
+33,Mobily,Large,Riyadh,Telecommunications
+34,Zain Saudi Arabia,Large,Riyadh,Telecommunications
+35,HungerStation,Medium,Riyadh,Food Delivery
+36,Jahez,Medium,Riyadh,Food Delivery
+37,Mrsool,Medium,Riyadh,Delivery Services
+38,Tamara,Medium,Riyadh,Financial Technology
+39,Tabby,Medium,Dubai,Financial Technology
+40,Neoleap,Small,Cairo,Financial Technology
+41,Amal Biznez,Small,Cairo,Business Solutions
+42,Yalla Note,Small,Cairo,Digital Education
+43,Edraak,Medium,Amman,E-learning
+44,Nafham,Small,Cairo,E-learning
+45,Thaki,Small,Cairo,Digital Education
+46,Almasa Capital,Medium,Cairo,Investment & Technology
+47,Aqarmap,Medium,Cairo,Digital Real Estate
+48,Property Finder,Medium,Dubai,Digital Real Estate
+49,Dubizzle,Medium,Dubai,Classified Ads
+50,OLX Egypt,Medium,Cairo,Classified Ads
+51,Haraj,Medium,Riyadh,Classified Ads
+52,Mstaml,Small,Riyadh,Classified Ads
+53,Syarah,Medium,Riyadh,Used Cars
+54,Shift,Small,Cairo,Used Cars
+55,Hatchi,Small,Cairo,Used Cars
+56,Carssome,Medium,Dubai,Automotive
+57,Flydubai,Large,Dubai,Aviation
+58,Flynas,Large,Riyadh,Aviation
+59,Egyptair,Large,Cairo,Aviation
+60,Nile Air,Medium,Cairo,Aviation
+61,Uber Egypt,Large,Cairo,Smart Transportation
+62,inDrive,Medium,Cairo,Transportation
+63,Didi,Medium,Alexandria,Transportation
+64,Halan,Medium,Cairo,Finance & Transportation
+65,Maxab,Medium,Cairo,B2B Commerce
+66,Jumia Egypt,Large,Cairo,E-commerce
+67,Amazon Egypt,Large,Cairo,E-commerce
+68,Shahmes,Small,Cairo,Solar Energy
+69,Karm Solar,Medium,Cairo,Solar Energy
+70,Infinity Solar,Medium,Cairo,Renewable Energy
+71,Next Era Energy,Small,Alexandria,Renewable Energy
+72,Sodic,Large,Cairo,Real Estate & Technology
+73,Emaar Misr,Large,Cairo,Real Estate Development
+74,Palm Hills,Large,Cairo,Real Estate Development
+75,Orascom,Large,Cairo,Telecom & Construction
+76,Telecom Egypt,Large,Giza,Telecommunications
+77,Global Telecom,Medium,Cairo,Telecommunications
+78,TE Data,Large,Giza,Internet & Data
+79,Nour,Medium,Cairo,Internet Services
+80,Linknet,Medium,Cairo,Internet Services
+81,Vodafone Cash,Large,Cairo,Digital Wallet
+82,Orange Money,Large,Cairo,Digital Wallet
+83,Etisalat Cash,Large,Cairo,Digital Wallet
+84,United Bank,Large,Cairo,Banking & Digital Services
+85,Banque du Caire,Large,Cairo,Banking Services
+86,National Bank of Egypt,Large,Cairo,Digital Banking Services
+87,Bank of Alexandria,Large,Alexandria,Banking Services
+88,Banque Misr,Large,Cairo,Digital Banking Services
+89,CIB (Commercial International Bank),Large,Giza,Banking Services
+90,Contact Center,Medium,Cairo,Call Center & BPO
+91,Teleperformance Egypt,Large,Cairo,Customer Services
+92,Raya BPO,Large,Cairo,Business Services
+93,Egypt Gold,Medium,Cairo,E-commerce
+94,PayMob,Medium,Cairo,Payment Gateways
+95,OpaPay,Small,Cairo,Digital Payments
+96,CashCall,Small,Cairo,Digital Loans
+97,Monia,Small,Cairo,Financial Technology
+98,Momken,Small,Cairo,Consumer Finance
+99,Spectra,Medium,Cairo,Tech Solutions
+100,iVentures,Small,Cairo,Tech Investment
