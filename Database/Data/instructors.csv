@@ -1,0 +1,101 @@
+ins_ID,ins_FirstName,ins_LastName,ins_Phone,ins_ExperienceYear,ins_IsInternal,ins_PreferOffline,ins_Email,ins_WorkingStatus,ins_Salary,ins_Age,ins_Gender,ins_Degree,ins_HireDate,ins_Specialization,cou_ID
+1,Mohamed,Omar,1236704516,3,0,0,mohamed.omar@gmail.com,Full-time,19500,25,Male,Bachelor's,7/6/2022,Mobile Development,328
+2,Youssef,Tawfik,1110064840,16,1,1,youssef.tawfik@hotmail.com,Part-time,39000,37,Male,Master's,8/27/2009,Mobile Development,58
+3,Aya,Ibrahim,1028018960,18,0,1,aya.ibrahim@gmail.com,Part-time,42000,39,Female,Bachelor's,9/5/2007,Network Engineering,13
+4,Dina,Mahmoud,1190842565,18,1,0,dina.mahmoud@gmail.com,Part-time,42000,42,Female,Master's,1/19/2007,DevOps,141
+5,Ali,Hassan,1533679715,1,1,1,ali.hassan@gmail.com,Part-time,16500,30,Male,Bachelor's,10/12/2024,DevOps,126
+6,Ali,Ali,1231709670,27,1,1,ali.ali@hotmail.com,Full-time,55500,48,Male,Master's,8/15/1998,Software Development,115
+7,Aya,Omar,1142720204,2,1,0,aya.omar@gmail.com,Part-time,18000,22,Female,Bachelor's,11/22/2023,Web Development,72
+8,Ali,Ibrahim,1586629832,15,0,0,ali.ibrahim@hotmail.com,Part-time,37500,35,Male,Bachelor's,8/9/2010,Cybersecurity,53
+9,Ali,Saleh,1075603761,12,0,1,ali.saleh@hotmail.com,Part-time,33000,33,Male,Master's,4/17/2013,Artificial Intelligence,347
+10,Omar,Youssef,1164431139,2,1,0,omar.youssef@gmail.com,Part-time,18000,29,Male,Bachelor's,1/26/2023,Database Administration,280
+11,Mostafa,Farouk,1075689501,4,0,0,mostafa.farouk@hotmail.com,Full-time,21000,26,Male,Bachelor's,4/12/2021,Artificial Intelligence,45
+12,Nour,Saleh,1097301061,13,0,0,nour.saleh@hotmail.com,Part-time,34500,33,Female,Master's,7/2/2012,Artificial Intelligence,303
+13,Mahmoud,Youssef,1156441018,5,0,1,mahmoud.youssef@hotmail.com,Full-time,22500,28,Male,Bachelor's,3/17/2020,Artificial Intelligence,217
+14,Mostafa,Omar,1221973753,3,1,0,mostafa.omar@hotmail.com,Part-time,19500,26,Male,Bachelor's,5/17/2022,Data Science,17
+15,Tamer,Omar,1022513603,19,1,1,tamer.omar@gmail.com,Part-time,43500,40,Male,Master's,8/17/2006,Software Development,16
+16,Salma,Mahmoud,1141119092,1,1,0,salma.mahmoud@gmail.com,Full-time,16500,30,Female,Bachelor's,11/17/2024,Mobile Development,48
+17,Ahmed,Youssef,1244937203,8,1,1,ahmed.youssef@gmail.com,Full-time,27000,31,Male,Bachelor's,2/2/2017,Cybersecurity,112
+18,Omar,Ali,1152510995,21,1,0,omar.ali@hotmail.com,Full-time,46500,42,Male,Bachelor's,12/22/2004,Power BI Development,120
+19,Khaled,Farouk,1015565144,4,1,0,khaled.farouk@hotmail.com,Part-time,21000,28,Male,Master's,7/5/2021,Data Engineering,259
+20,Omar,Saleh,1039026835,13,1,0,omar.saleh@hotmail.com,Full-time,34500,37,Male,Bachelor's,1/1/2012,Web Development,309
+21,Sara,Fahmy,1129120848,23,0,0,sara.fahmy@hotmail.com,Full-time,49500,47,Female,PhD,3/2/2002,Software Development,14
+22,Mohamed,Ali,1020283431,25,0,0,mohamed.ali@hotmail.com,Full-time,52500,47,Male,Master's,5/12/2000,Power BI Development,288
+23,Sara,Ibrahim,1575688882,5,0,1,sara.ibrahim@hotmail.com,Part-time,22500,29,Female,Bachelor's,10/6/2020,Machine Learning,102
+24,Khaled,Omar,1083241717,30,0,0,khaled.omar@hotmail.com,Part-time,60000,54,Male,PhD,7/4/1995,Cloud Computing,333
+25,Khaled,Tawfik,1155076792,28,0,0,khaled.tawfik@gmail.com,Part-time,57000,50,Male,Master's,7/11/1997,Artificial Intelligence,280
+26,Omar,Mahmoud,1586266378,23,0,1,omar.mahmoud@hotmail.com,Full-time,49500,43,Male,Master's,8/27/2002,Power BI Development,215
+27,Ahmed,Tawfik,1559070996,4,0,0,ahmed.tawfik@hotmail.com,Part-time,21000,25,Male,Bachelor's,1/6/2021,Data Engineering,113
+28,Hassan,Mahmoud,1594819112,30,1,1,hassan.mahmoud@gmail.com,Part-time,60000,52,Male,Master's,8/5/1995,Cybersecurity,230
+29,Dina,Saleh,1143284489,16,0,1,dina.saleh@hotmail.com,Full-time,39000,38,Female,Master's,4/2/2009,Data Science,302
+30,Sara,Omar,1292117271,20,0,1,sara.omar@gmail.com,Part-time,45000,42,Female,Bachelor's,6/22/2005,Database Administration,143
+31,Mahmoud,Ali,1181698295,5,0,0,mahmoud.ali@gmail.com,Full-time,22500,25,Male,Bachelor's,11/16/2020,Network Engineering,4
+32,Aya,Tawfik,1517550875,5,0,0,aya.tawfik@hotmail.com,Full-time,22500,30,Female,Master's,1/9/2020,Cybersecurity,82
+33,Omar,Omar,1249357111,3,1,1,omar.omar@gmail.com,Full-time,19500,29,Male,Master's,12/27/2022,Cybersecurity,217
+34,Mostafa,Tawfik,1152412916,5,1,1,mostafa.tawfik@hotmail.com,Part-time,22500,26,Male,Bachelor's,6/16/2020,Power BI Development,175
+35,Mostafa,Ali,1518872547,30,1,0,mostafa.ali@gmail.com,Part-time,60000,54,Male,Master's,3/20/1995,Power BI Development,143
+36,Khaled,Hassan,1156839606,4,1,0,khaled.hassan@gmail.com,Full-time,21000,27,Male,Bachelor's,12/27/2021,Network Engineering,80
+37,Mona,Hassan,1251071305,29,0,0,mona.hassan@hotmail.com,Part-time,58500,50,Female,Master's,4/19/1996,DevOps,111
+38,Salma,Ali,1181275752,5,1,0,salma.ali@gmail.com,Full-time,22500,23,Female,Bachelor's,10/3/2020,Data Science,173
+39,Tamer,Ali,1012436915,3,0,1,tamer.ali@gmail.com,Full-time,19500,28,Male,Bachelor's,3/20/2022,Data Science,53
+40,Tamer,Farouk,1070235808,3,1,1,tamer.farouk@hotmail.com,Part-time,19500,27,Male,Bachelor's,7/20/2022,DevOps,48
+41,Hassan,Tawfik,1265508433,4,0,1,hassan.tawfik@gmail.com,Full-time,21000,27,Male,Bachelor's,9/1/2021,DevOps,195
+42,Heba,Farouk,1590018471,2,1,1,heba.farouk@hotmail.com,Full-time,18000,24,Female,Bachelor's,8/7/2023,Power BI Development,50
+43,Dina,Farouk,1089467041,2,0,0,dina.farouk@hotmail.com,Part-time,18000,27,Female,Bachelor's,2/8/2023,Software Development,184
+44,Salma,Ibrahim,1187125401,8,1,1,salma.ibrahim@hotmail.com,Part-time,27000,31,Female,Master's,1/11/2017,Artificial Intelligence,177
+45,Mahmoud,Mahmoud,1537599338,5,0,0,mahmoud.mahmoud@hotmail.com,Part-time,22500,25,Male,Bachelor's,12/25/2020,Machine Learning,310
+46,Mona,Mahmoud,1522972020,1,1,1,mona.mahmoud@gmail.com,Full-time,16500,27,Female,Bachelor's,9/18/2024,Machine Learning,136
+47,Marwa,Tawfik,1235901583,21,0,1,marwa.tawfik@gmail.com,Full-time,46500,42,Female,Master's,7/10/2004,Network Engineering,23
+48,Youssef,Mahmoud,1573414395,17,0,1,youssef.mahmoud@hotmail.com,Full-time,40500,37,Male,Master's,3/7/2008,Artificial Intelligence,236
+49,Mahmoud,Omar,1254416093,18,1,1,mahmoud.omar@gmail.com,Part-time,42000,40,Male,Master's,12/16/2007,Database Administration,275
+50,Youssef,Ibrahim,1027804405,10,0,0,youssef.ibrahim@gmail.com,Full-time,30000,34,Male,Bachelor's,10/16/2015,Power BI Development,64
+51,Hassan,Youssef,1555399426,14,0,0,hassan.youssef@gmail.com,Part-time,36000,35,Male,Master's,9/20/2011,Mobile Development,194
+52,Yasmin,Fahmy,1226390357,30,1,0,yasmin.fahmy@hotmail.com,Full-time,60000,53,Female,Master's,12/17/1995,Data Science,41
+53,Tamer,Tawfik,1287961072,14,1,1,tamer.tawfik@hotmail.com,Part-time,36000,38,Male,Master's,2/1/2011,Software Development,283
+54,Khaled,Mahmoud,1542711836,5,0,0,khaled.mahmoud@hotmail.com,Part-time,22500,25,Male,Bachelor's,12/5/2020,DevOps,151
+55,Marwa,Farouk,1248656512,20,1,1,marwa.farouk@gmail.com,Part-time,45000,42,Female,Master's,5/27/2005,Cloud Computing,322
+56,Mohamed,Ibrahim,1180242449,4,1,0,mohamed.ibrahim@gmail.com,Full-time,21000,27,Male,Bachelor's,7/9/2021,Data Engineering,317
+57,Sara,Hassan,1116472478,18,0,0,sara.hassan@hotmail.com,Full-time,42000,40,Female,Master's,9/3/2007,Artificial Intelligence,186
+58,Tamer,Mahmoud,1095230296,28,1,0,tamer.mahmoud@hotmail.com,Full-time,57000,50,Male,Master's,3/16/1997,Software Development,296
+59,Salma,Fahmy,1596640512,18,0,0,salma.fahmy@gmail.com,Full-time,42000,41,Female,Master's,3/20/2007,Mobile Development,99
+60,Salma,Farouk,1139228907,21,0,1,salma.farouk@gmail.com,Part-time,46500,45,Female,Master's,8/22/2004,Artificial Intelligence,36
+61,Aya,Youssef,1223798479,4,1,0,aya.youssef@gmail.com,Part-time,21000,26,Female,Bachelor's,8/1/2021,Database Administration,24
+62,Salma,Tawfik,1120449761,30,0,1,salma.tawfik@gmail.com,Full-time,60000,53,Female,Master's,8/20/1995,Web Development,339
+63,Mohamed,Saleh,1120060592,29,0,0,mohamed.saleh@hotmail.com,Full-time,58500,50,Male,Master's,11/17/1996,Data Science,117
+64,Sara,Ali,1569778954,18,0,1,sara.ali@gmail.com,Full-time,42000,39,Female,Master's,8/4/2007,Mobile Development,149
+65,Salma,Hassan,1199305453,4,1,1,salma.hassan@gmail.com,Full-time,21000,25,Female,Bachelor's,6/8/2021,Web Development,41
+66,Mahmoud,Hassan,1118676724,4,0,1,mahmoud.hassan@hotmail.com,Full-time,21000,24,Male,Bachelor's,4/3/2021,Data Science,120
+67,Ahmed,Ibrahim,1182739838,12,1,0,ahmed.ibrahim@gmail.com,Full-time,33000,36,Male,Master's,9/3/2013,Database Administration,52
+68,Tamer,Fahmy,1249832229,20,1,0,tamer.fahmy@gmail.com,Part-time,45000,40,Male,Master's,9/18/2005,Cybersecurity,195
+69,Mona,Ali,1033879822,4,0,0,mona.ali@gmail.com,Full-time,21000,30,Female,Bachelor's,2/2/2021,Artificial Intelligence,143
+70,Aya,Saleh,1023686638,3,0,1,aya.saleh@gmail.com,Full-time,19500,29,Female,Bachelor's,6/3/2022,Mobile Development,233
+71,Marwa,Youssef,1057398345,2,0,1,marwa.youssef@hotmail.com,Full-time,18000,27,Female,Bachelor's,9/4/2023,Power BI Development,326
+72,Mostafa,Fahmy,1294501227,30,1,0,mostafa.fahmy@gmail.com,Full-time,60000,54,Male,Master's,1/4/1995,Power BI Development,187
+73,Yasmin,Farouk,1112305664,4,1,0,yasmin.farouk@gmail.com,Full-time,21000,26,Female,Bachelor's,1/14/2021,Network Engineering,84
+74,Heba,Kamal,1532495373,1,0,1,heba.kamal@gmail.com,Full-time,16500,28,Female,Bachelor's,5/16/2024,Database Administration,190
+75,Hana,Samir,1145291020,7,1,0,hana.samir@gmail.com,Part-time,25500,32,Female,Master's,4/24/2018,Software Development,182
+76,Hala,Adly,1178972486,19,1,0,hala.adly@hotmail.com,Full-time,43500,47,Female,Master's,8/7/2006,Machine Learning,108
+77,Basel,Said,1533528156,1,0,0,basel.said@gmail.com,Part-time,16500,29,Male,Master's,3/17/2024,Data Engineering,344
+78,Karim,Ahmed,1149224064,1,1,0,karim.ahmed@hotmail.com,Part-time,16500,27,Male,Bachelor's,1/16/2024,Web Development,137
+79,Omar,Rashid,1514662674,8,1,0,omar.rashid@gmail.com,Full-time,27000,34,Male,Bachelor's,12/27/2017,Network Engineering,350
+80,Nada,Nabil,1278365818,4,1,1,nada.nabil@gmail.com,Full-time,21000,50,Female,Master's,3/22/2021,Cloud Computing,332
+81,Rami,Abdelaziz,1159184553,1,1,0,rami.abdelaziz@hotmail.com,Full-time,16500,26,Male,Bachelor's,7/22/2024,Network Engineering,37
+82,Sherif,Adly,1022538730,26,0,0,sherif.adly@gmail.com,Full-time,54000,49,Male,PhD,6/6/1999,Cybersecurity,312
+83,Omar,Samir,1536365241,14,0,0,omar.samir@gmail.com,Part-time,36000,46,Male,Master's,3/22/2011,Web Development,326
+84,Nadia,Hakim,1264194259,3,0,0,nadia.hakim@gmail.com,Full-time,19500,27,Female,Bachelor's,8/27/2022,DevOps,88
+85,Essam,Ahmed,1045340852,2,1,1,essam.ahmed@hotmail.com,Part-time,18000,35,Male,Master's,11/2/2023,Cloud Computing,274
+86,Noha,Kamal,1285214180,20,0,0,noha.kamal@hotmail.com,Part-time,45000,49,Female,Master's,5/1/2005,Data Engineering,126
+87,Hana,Rashid,1255053684,1,1,1,hana.rashid@hotmail.com,Part-time,16500,30,Female,Bachelor's,12/15/2024,Network Engineering,84
+88,Essam,Amin,1073332163,5,0,1,essam.amin@gmail.com,Full-time,22500,50,Male,Master's,1/5/2020,Machine Learning,237
+89,Tarek,Gamal,1565855256,4,0,0,tarek.gamal@gmail.com,Part-time,21000,27,Male,Bachelor's,12/16/2021,Software Development,195
+90,Noha,Rashid,1221496669,5,1,0,noha.rashid@hotmail.com,Full-time,22500,26,Female,Bachelor's,3/4/2020,Cybersecurity,139
+91,Noha,Adly,1233456916,1,1,0,noha.adly@hotmail.com,Full-time,16500,25,Female,Bachelor's,3/17/2024,Power BI Development,328
+92,Basel,Abdelaziz,1580100404,10,0,1,basel.abdelaziz@gmail.com,Part-time,30000,36,Male,Master's,1/12/2015,Cybersecurity,286
+93,Hana,Abdelaziz,1162103983,9,0,0,hana.abdelaziz@hotmail.com,Part-time,28500,35,Female,Bachelor's,12/14/2016,Database Administration,113
+94,Sherif,Rashid,1162876776,25,0,1,sherif.rashid@hotmail.com,Full-time,52500,47,Male,Master's,5/6/2000,DevOps,167
+95,Essam,Said,1542425421,7,1,0,essam.said@hotmail.com,Part-time,25500,31,Male,Bachelor's,3/28/2018,Cloud Computing,29
+96,Reem,Gamal,1197779419,19,0,0,reem.gamal@hotmail.com,Part-time,43500,46,Female,Master's,9/5/2006,Cloud Computing,118
+97,Amr,Adly,1582067640,3,0,0,amr.adly@gmail.com,Part-time,19500,25,Male,Bachelor's,8/17/2022,Artificial Intelligence,17
+98,Tarek,Kamal,1265012476,13,1,1,tarek.kamal@gmail.com,Part-time,34500,51,Male,PhD,5/3/2012,Web Development,162
+99,Karim,Mostafa,1145794355,11,0,0,karim.mostafa@hotmail.com,Full-time,31500,36,Male,Master's,12/1/2014,Cybersecurity,206
+100,Nour,Adly,1060188455,22,1,0,nour.adly@hotmail.com,Full-time,48000,46,Female,Master's,4/21/2003,Artificial Intelligence,138
