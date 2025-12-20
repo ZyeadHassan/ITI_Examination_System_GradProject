@@ -81,7 +81,7 @@ This system helps educational institutions manage examinations efficiently and a
 |  <img src="assets/team/Zyead.jpg.jpeg" width="140"> | <img src="assets/team/ahmed.png.png" width="180"> | <img src="assets/team/tarek.jpg.jpg" width="140"> | <img src="assets/team/khaled.jpg.jpg" width="180">  | <img src="assets/team/hossam.png.png" width="140"> |
 |:--:|:--:|:--:|:--:|:--:|
 | 🚀 Zyead Hassan | 🔥 Ahmed Anwar | ⚡ Tarek Emam | 💎 Khaled Samy | 💻 Hossam Hamdy |
-| Data Analyst/Engineer | BI Dev & DA | BI Dev & DA | BI Dev & DA | BI Dev & DA |
+|BI Dev /Data Analyst | BI Dev /Data Analyst | BI Dev /Data Analyst | BI Dev /Data Analyst | BI Dev /Data Analyst |
 | [![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/ZyeadHassan) |  [![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat&logo=github&logoColor=white)]() |  [![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat&logo=github&logoColor=white)]() |  [![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat&logo=github&logoColor=white)]() |   [![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/hossamelghandour) |
 | [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/zyeadhassan9) | [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ahmedanwar15)| [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/tarek-emam123)| [LinkedIn](#) | [LinkedIn](#) |
 | [Portfolio](https://www.datascienceportfol.io/zyeadhassan9) | | | | |
