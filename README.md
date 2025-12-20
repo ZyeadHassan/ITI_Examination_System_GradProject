@@ -78,7 +78,7 @@ This system helps educational institutions manage examinations efficiently and a
 
 ---
 ## ✨ Meet Our Incredible Team
-|  <img src="assets/team/Zyead.jpg.jpeg" width="140"> | <img src="assets/team/ahmed.png.png" width="180"> | <img src="assets/team/tarek.jpg.jpg" width="140"> | <img src="assets/team/khaled.jpg.jpg" width="180">  | <img src="assets/team/hossam.png.png" width="140"> |
+|  <img src="assets/team/Zyead.jpg.jpeg" width="150"> | <img src="assets/team/ahmed.png.png" width="180"> | <img src="assets/team/tarek.jpg.jpg" width="150"> | <img src="assets/team/khaled.jpg.jpg" width="180">  | <img src="assets/team/hossam.png.png" width="150"> |
 |:--:|:--:|:--:|:--:|:--:|
 | 🚀 Zyead Hassan | 🔥 Ahmed Anwar | ⚡ Tarek Emam | 💎 Khaled Samy | 💻 Hossam Hamdy |
 |BI Dev /Data Analyst | BI Dev /Data Analyst | BI Dev /Data Analyst | BI Dev /Data Analyst | BI Dev /Data Analyst |
